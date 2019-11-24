@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_query"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_12"
+        android:textColor="#ffffff"
+        android:gravity="right"
+        />
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:background="@drawable/query_item_shpe"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/et_query"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_12"
+            android:background="@null"
+            />
+        <ImageButton
+            android:id="@+id/scan"
+            android:layout_width="@dimen/dp_12"
+            android:layout_height="@dimen/dp_12"
+            android:background="@drawable/saoyisao"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"/>
+    </LinearLayout>
+   
+</LinearLayout>

@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/home_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_50"
+            android:paddingRight="@dimen/dp_50"
+            android:rowCount="7"
+            android:scrollbars="vertical">
+
+            <ImageView
+                android:layout_height="@dimen/dp_33"
+                android:layout_columnSpan="2"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@drawable/home_logo" />
+
+            <ImageButton
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_110"
+                android:layout_columnSpan="2"
+                android:layout_margin="@dimen/dp_3_5"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@drawable/home_btn_1zhidu" />
+
+            <ImageButton
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_2baosun" />
+
+            <ImageButton
+                android:id="@+id/btn3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_3ruku" />
+
+            <ImageButton
+                android:id="@+id/btn4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_4tuihuo" />
+
+            <ImageButton
+                android:id="@+id/btn5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_5chuku" />
+
+            <ImageButton
+                android:id="@+id/btn6"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_6tuiku" />
+
+            <ImageButton
+                android:id="@+id/btn7"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_7kucun" />
+
+            <ImageButton
+                android:id="@+id/btn8"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_8jifei" />
+
+            <ImageButton
+                android:id="@+id/btn9"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_9zhuishuo" />
+
+            <ImageButton
+                android:id="@+id/btn10"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_10zizhi" />
+
+            <ImageButton
+                android:id="@+id/btn11"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/dp_3_5"
+                android:background="@drawable/home_btn_11yixue" />
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>
