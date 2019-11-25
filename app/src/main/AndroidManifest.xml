@@ -27,6 +27,13 @@
         <activity android:name=".activity.VideoActivity" />
         <activity android:name=".activity.RKActivity" />
         <activity android:name=".activity.RKInfoActivity" />
+        <activity android:name=".activity.THActivity" />
+        <activity android:name=".activity.THInfoActivity" />
+        <activity android:name=".activity.CKInfoActivity" />
+        <activity android:name=".activity.TKActivity" />
+        <activity android:name=".activity.TKInfoActivity" />
+        <activity android:name=".activity.JFActivity" />
+        <activity android:name=".activity.JFInfoActivity" />
     </application>
 
 </manifest>

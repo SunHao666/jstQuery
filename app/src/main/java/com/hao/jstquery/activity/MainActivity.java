@@ -67,15 +67,19 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this,RKActivity.class));
                 break;
             case R.id.btn4://退货查询
+                startActivity(new Intent(this,THActivity.class));
                 break;
             case R.id.btn5://出库查询
+                startActivity(new Intent(this,CKActivity.class));
                 break;
             case R.id.btn6://退库查询
+                startActivity(new Intent(this,CKActivity.class));
                 break;
             case R.id.btn7://库存查询
                 startActivity(new Intent(this, KCActivity.class));
                 break;
             case R.id.btn8://计费查询
+                startActivity(new Intent(this, KCActivity.class));
                 break;
             case R.id.btn9://追溯查询
                 break;

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/home_bg"
+    android:layout_height="match_parent">
+    <include android:id="@+id/top" layout="@layout/top_logo"/>
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_bottom"
+        layout="@layout/home_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_17"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:orientation="vertical"
+        android:background="@drawable/query_item_shpe"
+        android:layout_below="@id/top"
+        android:layout_above="@id/home_bottom"
+        android:alpha="0.3">
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_above="@id/home_bottom"
+        android:orientation="vertical"
+        android:layout_below="@id/top"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_30"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/dp_20"
+            >
+            <ImageView
+                android:layout_width="@dimen/dp_19"
+                android:layout_height="@dimen/dp_19"
+                android:background="@drawable/kucun_shaixuan_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ckquery"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dp_10"
+                />
+        </LinearLayout>
+
+        <com.hao.jstquery.view.QueryItemScanView
+            android:id="@+id/ck1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/ck1"
+            />
+
+        <com.hao.jstquery.view.QueryItemScanView
+            android:id="@+id/ck2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:title="@string/ck2"
+            />
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/ck3"
+            />
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/ck4"
+            />
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/ck5"
+            />
+
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/ck6"
+            />
+
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/ck7"
+            />
+
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/ck8"
+            />
+
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:name="@string/ck9"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/ck10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:name="@string/ck10"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            >
+            <TextView
+                android:id="@+id/tv_query"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="wrap_content"
+                />
+            <LinearLayout
+                android:id="@+id/lay_query"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:background="@drawable/query_button_select"
+                android:orientation="horizontal">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="@dimen/dp_15"
+                    android:layout_height="@dimen/dp_15"
+                    android:background="@drawable/baosun_shaixuan_search"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_15"
+                    android:text="@string/query"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/dp_7"
+                    android:gravity="center"
+                    />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
