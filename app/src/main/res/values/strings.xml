@@ -38,4 +38,16 @@
     <string name="login">请登录</string>
     <string name="pwd">密码</string>
     <string name="loginbtn">登录</string>
+    <string name="videolist">医疗视频</string>
+    <string name="rkquery">入库查询</string>
+    <string name="rk1">入库单号</string>
+    <string name="rk2">唯一码</string>
+    <string name="rk3">通用名称</string>
+    <string name="rk4">商品名称</string>
+    <string name="rk5">规格型号</string>
+    <string name="rk6">品牌</string>
+    <string name="rk7">生产批号</string>
+    <string name="rk8">配送商</string>
+    <string name="rk9">入库时间</string>
+    <string name="rk10">入库人</string>
 </resources>

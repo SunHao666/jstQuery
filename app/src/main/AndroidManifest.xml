@@ -24,6 +24,9 @@
         <activity android:name=".activity.KCActivity" />
         <activity android:name=".activity.KCInfoActivity" />
         <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.VideoActivity" />
+        <activity android:name=".activity.RKActivity" />
+        <activity android:name=".activity.RKInfoActivity" />
     </application>
 
 </manifest>

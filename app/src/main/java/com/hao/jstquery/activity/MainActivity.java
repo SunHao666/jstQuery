@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public int getLayout() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_new;
     }
 
     @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9, R.id.btn10, R.id.btn11})
@@ -64,6 +64,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, Query1Activity.class));
                 break;
             case R.id.btn3://入库查询
+                startActivity(new Intent(this,RKActivity.class));
                 break;
             case R.id.btn4://退货查询
                 break;
@@ -82,6 +83,7 @@ public class MainActivity extends BaseActivity {
 
                 break;
             case R.id.btn11:
+                startActivity(new Intent(this,VideoActivity.class));
                 break;
         }
     }
