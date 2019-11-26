@@ -82,6 +82,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, KCActivity.class));
                 break;
             case R.id.btn9://追溯查询
+                startActivity(new Intent(this, ZSActivity.class));
                 break;
             case R.id.btn10://资质查询、
 
