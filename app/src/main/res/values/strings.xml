@@ -146,4 +146,7 @@
     <string name="zsright">介入耗材</string>
     <string name="zs_wy">唯一码查询</string>
     <string name="zs_zc">主次码查询</string>
+    <string name="bs5new">货号</string>
+    <string name="bs9new">开始时间</string>
+    <string name="bs10new">结束时间</string>
 </resources>

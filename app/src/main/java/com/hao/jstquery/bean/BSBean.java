@@ -97,7 +97,6 @@ public class BSBean {
          * temprownumber : 1
          * drugSerialNo : YPJBXX008824
          */
-
         private String date;
         private String supplierName;
         private String reportedLossNo;

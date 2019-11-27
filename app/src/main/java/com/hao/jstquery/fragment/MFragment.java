@@ -15,6 +15,7 @@ import com.hao.jstquery.network.NetManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 
@@ -25,6 +26,13 @@ public class MFragment extends BaseFragment {
     RecyclerView recyclerview;
     private List<BSBean.ListBean> data = new ArrayList<>();
     private QueryRecAdapter adapter;
+    private int page;
+    private Map<String, Object> map;
+    public MFragment(int i, Map<String, Object> map) {
+        super();
+        this.page = i;
+        this.map = map;
+    }
 
     @Override
     protected void initData() {
@@ -40,7 +48,8 @@ public class MFragment extends BaseFragment {
     }
 
     private void request() {
-        NetManager.getInstance().api().listBS()
+        map.put("pageNo",page);
+        NetManager.getInstance().api().listBS(map)
                 .enqueue(new BaseCallback<BSBean>() {
                     @Override
                     protected void onSuccess(BSBean bsBean) {

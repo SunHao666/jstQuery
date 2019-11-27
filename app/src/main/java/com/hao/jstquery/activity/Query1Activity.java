@@ -12,7 +12,11 @@ import android.widget.Toast;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.SerializableMap;
 import com.hao.jstquery.view.QueryItemView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,7 +56,13 @@ public class Query1Activity extends BaseActivity {
         layQuery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Query1Activity.this,QueryInfoActivity.class));
+                SerializableMap map=new SerializableMap();
+                map.setMap(getMap());
+                Intent intent = new Intent(Query1Activity.this,QueryInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("bundle", map);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
@@ -75,26 +85,25 @@ public class Query1Activity extends BaseActivity {
                 finish();
                 break;
             case R.id.lay_query:
-                Log.e("tag","1111");
-                checkInput();
-                startActivity(new Intent(this,QueryInfoActivity.class));
+
                 break;
         }
     }
 
-    private void checkInput() {
-        if(TextUtils.isEmpty(bs1.getText())
-        && TextUtils.isEmpty(bs2.getText())
-                && TextUtils.isEmpty(bs3.getText())
-                && TextUtils.isEmpty(bs4.getText())
-                && TextUtils.isEmpty(bs5.getText())
-                && TextUtils.isEmpty(bs6.getText())
-                && TextUtils.isEmpty(bs7.getText())
-                && TextUtils.isEmpty(bs8.getText())
-                && TextUtils.isEmpty(bs9.getText())
-                && TextUtils.isEmpty(bs10.getText())
-        ){
-
-        }
+    private Map<String, Object> getMap() {
+        Map<String,Object> dataMap = new HashMap<>();
+        dataMap.put("pageNo",1);
+        dataMap.put("pageSize",20);
+        dataMap.put("reportedLossNo",bs1.getText().toString());
+        dataMap.put("rfid",bs2.getText().toString());
+        dataMap.put("innName",bs3.getText().toString());
+        dataMap.put("tradeName",bs4.getText().toString());
+        dataMap.put("articalNumber",bs5.getText().toString());
+        dataMap.put("batchNo",bs7.getText().toString());
+        dataMap.put("supplierName",bs8.getText().toString());
+        dataMap.put("startDate",bs9.getText().toString());
+        dataMap.put("endDate",bs10.getText().toString());
+        return dataMap;
     }
+
 }
