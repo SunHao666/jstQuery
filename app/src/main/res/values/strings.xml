@@ -141,4 +141,9 @@
     <string name="jff11">成本科室</string>
     <string name="jff12">计费人</string>
     <string name="jff13">配送商</string>
+    <string name="zsquery">追溯查询</string>
+    <string name="zsleft">植入耗材</string>
+    <string name="zsright">介入耗材</string>
+    <string name="zs_wy">唯一码查询</string>
+    <string name="zs_zc">主次码查询</string>
 </resources>

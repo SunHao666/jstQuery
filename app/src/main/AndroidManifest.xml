@@ -34,6 +34,8 @@
         <activity android:name=".activity.TKInfoActivity" />
         <activity android:name=".activity.JFActivity" />
         <activity android:name=".activity.JFInfoActivity" />
+        <activity android:name=".activity.ZSActivity" />
+        <activity android:name=".activity.ZSInfoActivity" />
     </application>
 
 </manifest>
