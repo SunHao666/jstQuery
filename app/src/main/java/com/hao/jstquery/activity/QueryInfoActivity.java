@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -14,7 +15,10 @@ import androidx.viewpager.widget.ViewPager;
 import com.hao.jstquery.R;
 import com.hao.jstquery.adapter.QueryInfoAdapter;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.BSBean;
 import com.hao.jstquery.fragment.MFragment;
+import com.hao.jstquery.network.BaseCallback;
+import com.hao.jstquery.network.NetManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,18 +42,38 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
     RelativeLayout homeBottom;
     @BindView(R.id.tv_page)
     TextView tvPage;
+    @BindView(R.id.totalitem)
+    TextView totalitem;
+    private List<Fragment>  data = new ArrayList<>();
+    private QueryInfoAdapter adapter;
 
     @Override
     protected void initData() {
-        List<Fragment> data = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            data.add(new MFragment());
-        }
-        QueryInfoAdapter adapter = new QueryInfoAdapter(getSupportFragmentManager(), data);
-        tvPage.setText("第 "+1+" 页");
+        request();
+        adapter = new QueryInfoAdapter(getSupportFragmentManager(), data);
+        tvPage.setText("第 " + 1 + " 页");
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(this);
+    }
+
+    private void request() {
+        NetManager.getInstance().api().listBS()
+                .enqueue(new BaseCallback<BSBean>() {
+                    @Override
+                    protected void onSuccess(BSBean bsBean) {
+                        totalitem.setText("共"+bsBean.getTotalRow()+"条");
+                        for (int i = 0; i < bsBean.getTotalPage(); i++) {
+                            data.add(new MFragment());
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    protected void onFailed(int code, String msg) {
+                        Toast.makeText(QueryInfoActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override
@@ -86,7 +110,7 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
 
     @Override
     public void onPageSelected(int position) {
-        tvPage.setText("第 "+(position+1)+" 页");
+        tvPage.setText("第 " + (position + 1) + " 页");
     }
 
     @Override

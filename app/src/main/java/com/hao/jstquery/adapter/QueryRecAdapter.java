@@ -20,9 +20,9 @@ import butterknife.ButterKnife;
 public class QueryRecAdapter extends RecyclerView.Adapter<QueryRecAdapter.ViewHolder> {
 
     public Context context;
-    public List<BSBean> data;
+    public List<BSBean.ListBean> data;
 
-    public QueryRecAdapter(Context context, List<BSBean> data) {
+    public QueryRecAdapter(Context context, List<BSBean.ListBean> data) {
         this.context = context;
         this.data = data;
     }
@@ -36,8 +36,9 @@ public class QueryRecAdapter extends RecyclerView.Adapter<QueryRecAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bsr1.setText("bsr1"+position);
-        holder.bsr2.setText("bsr2"+position);
+        BSBean.ListBean bean = data.get(position);
+        holder.bsr1.setText(bean.getReportedLossNo());
+        holder.bsr2.setText(bean.getInnName());
         holder.bsr3.setText("bsr3"+position);
         holder.bsr4.setText("bsr4"+position);
         holder.bsr5.setText("bsr5"+position);
