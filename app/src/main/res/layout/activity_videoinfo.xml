@@ -46,7 +46,7 @@
                 android:layout_marginLeft="@dimen/dp_6"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginBottom="@dimen/dp_10"
-                android:text="@string/videolist"
+                android:text="@string/zdquery"
                 android:textColor="@color/gray1"
                 android:textSize="8sp" />
 
@@ -86,14 +86,38 @@
             android:layout_height="@dimen/dp_1"
             android:background="@color/gray2"
             />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
             >
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:id="@+id/tv_zdtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《北京积水潭医院医用耗材管理办法》"
+                android:layout_margin="@dimen/dp_10"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_3"
+                android:background="@color/gray3"
+                />
+
+            <com.dueeeke.videoplayer.player.VideoView
+                android:id="@+id/videoview"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                />
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

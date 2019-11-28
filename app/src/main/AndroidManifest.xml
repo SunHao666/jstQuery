@@ -36,6 +36,7 @@
         <activity android:name=".activity.JFInfoActivity" />
         <activity android:name=".activity.ZSActivity" />
         <activity android:name=".activity.ZSInfoActivity" />
+        <activity android:name=".activity.VideoInfoActivity" />
     </application>
 
 </manifest>
