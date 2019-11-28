@@ -40,15 +40,20 @@ public class JFAdapter extends RecyclerView.Adapter<JFAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         JFBean.JFListBean bean = data.get(position);
         holder.jfr1.setText(bean.getUsePageNo());//报损单号
-        holder.jfr2.setText(bean.getPatientName());//唯一码
+        holder.jfr2.setText(bean.getAdmNo());//唯一码
         holder.jfr3.setText(bean.getPatientName());//通用名称
-        holder.jfr4.setText(bean.getTradeName());//商品名称
-        holder.jfr5.setText(bean.getSpecification());//规格型号
-        holder.jfr6.setText(bean.getTradeMark());//品牌
-//        holder.jfr7.setText(bean.getArticalNumber());//货号
-        holder.jfr8.setText(bean.getBatchNo());//生成批号
-        holder.jfr9.setText(bean.getSupplierName());//配送商
-        holder.jfr10.setText(bean.getDate());//报损时间
+        holder.jfr4.setText(bean.getSpdBizDeptName());//商品名称
+        holder.jfr5.setText(bean.getRfid());//规格型号
+        holder.jfr6.setText(bean.getInnName());//品牌
+        holder.jfr7.setText(bean.getTradeName());
+        holder.jfr8.setText(bean.getSpecification());//生成批号
+        holder.jfr9.setText(bean.getTradeMark());//配送商
+
+        holder.jfr10.setText(bean.getTradeMark());//货号
+        holder.jfr11.setText(bean.getBatchNo());//货号
+        holder.jfr12.setText(bean.getDate());//货号
+        holder.jfr13.setText(bean.getUserName());//货号
+        holder.jfr14.setText(bean.getSupplierName());//货号
 //        holder.jfr11.setText(bean.getSupplierUser());//报损人
         if (position % 2 == 0) {
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.white));

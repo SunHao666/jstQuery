@@ -118,18 +118,18 @@
             />
 
 
-        <com.hao.jstquery.view.QueryItemView
+        <com.hao.jstquery.view.QueryDataView
             android:id="@+id/ck8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/startdata"
+            app:data="@string/startdata"
             android:layout_marginTop="@dimen/dp_10"
             />
-        <com.hao.jstquery.view.QueryItemView
+        <com.hao.jstquery.view.QueryDataView
             android:id="@+id/ck9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/enddata"
+            app:data="@string/enddata"
             android:layout_marginTop="@dimen/dp_10"
             />
 

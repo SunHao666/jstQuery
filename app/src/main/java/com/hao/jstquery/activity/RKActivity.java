@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.bean.SerializableMap;
+import com.hao.jstquery.utils.DataDialog;
+import com.hao.jstquery.view.QueryDataView;
 import com.hao.jstquery.view.QueryItemScanView;
 import com.hao.jstquery.view.QueryItemView;
 
@@ -41,9 +43,9 @@ public class RKActivity extends BaseActivity {
     @BindView(R.id.rk7)
     QueryItemView rk7;
     @BindView(R.id.rk8)
-    QueryItemView rk8;
+    QueryDataView rk8;
     @BindView(R.id.rk9)
-    QueryItemView rk9;
+    QueryDataView rk9;
     @BindView(R.id.tv_query)
     TextView tvQuery;
     @BindView(R.id.lay_query)
@@ -86,6 +88,30 @@ public class RKActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        rk8.setOnClickListener(new QueryDataView.OnDataClickListener() {
+            @Override
+            public void onClick() {
+                DataDialog.showtime(RKActivity.this, new DataDialog.DataCallBack() {
+                    @Override
+                    public void getData(String data) {
+                        rk8.setText(data);
+                    }
+                });
+            }
+        });
+
+        rk9.setOnClickListener(new QueryDataView.OnDataClickListener() {
+            @Override
+            public void onClick() {
+                DataDialog.showtime(RKActivity.this, new DataDialog.DataCallBack() {
+                    @Override
+                    public void getData(String data) {
+                        rk9.setText(data);
+                    }
+                });
             }
         });
     }

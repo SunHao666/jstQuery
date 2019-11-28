@@ -1,8 +1,10 @@
 package com.hao.jstquery.activity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -11,9 +13,12 @@ import android.widget.TextView;
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.bean.SerializableMap;
+import com.hao.jstquery.utils.DataDialog;
+import com.hao.jstquery.view.QueryDataView;
 import com.hao.jstquery.view.QueryItemScanView;
 import com.hao.jstquery.view.QueryItemView;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,9 +51,9 @@ public class CKActivity extends BaseActivity {
     @BindView(R.id.ck7)
     QueryItemView ck7;
     @BindView(R.id.ck8)
-    QueryItemView ck8;
+    QueryDataView ck8;
     @BindView(R.id.ck9)
-    QueryItemView ck9;
+    QueryDataView ck9;
     @BindView(R.id.home_bottom)
     RelativeLayout homeBottom;
 
@@ -90,6 +95,39 @@ public class CKActivity extends BaseActivity {
                 finish();
             }
         });
+
+        ck8.setOnClickListener(new QueryDataView.OnDataClickListener() {
+            @Override
+            public void onClick() {
+                DataDialog.showtime(CKActivity.this, new DataDialog.DataCallBack() {
+                    @Override
+                    public void getData(String data) {
+                        ck8.setText(data);
+                    }
+                });
+            }
+        });
+
+        ck9.setOnClickListener(new QueryDataView.OnDataClickListener() {
+            @Override
+            public void onClick() {
+                DataDialog.showtime(CKActivity.this, new DataDialog.DataCallBack() {
+                    @Override
+                    public void getData(String data) {
+                        ck9.setText(data);
+                    }
+                });
+            }
+        });
+    }
+
+    private void showtime() {
+        DataDialog.showtime(this, new DataDialog.DataCallBack() {
+            @Override
+            public void getData(String data) {
+                ck8.setText(data);
+            }
+        });
     }
 
     @Override
@@ -119,4 +157,6 @@ public class CKActivity extends BaseActivity {
         dataMap.put("endDate",ck9.getText().toString());//结束时间
         return dataMap;
     }
+
+
 }

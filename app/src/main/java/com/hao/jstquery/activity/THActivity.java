@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.bean.SerializableMap;
+import com.hao.jstquery.utils.DataDialog;
+import com.hao.jstquery.view.QueryDataView;
 import com.hao.jstquery.view.QueryItemScanView;
 import com.hao.jstquery.view.QueryItemView;
 
@@ -43,9 +45,9 @@ public class THActivity extends BaseActivity {
     @BindView(R.id.th7)
     QueryItemView th7;
     @BindView(R.id.th8)
-    QueryItemView th8;
+    QueryDataView th8;
     @BindView(R.id.th9)
-    QueryItemView th9;
+    QueryDataView th9;
     @BindView(R.id.tv_query)
     TextView tvQuery;
     @BindView(R.id.lay_query)
@@ -86,6 +88,30 @@ public class THActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        th8.setOnClickListener(new QueryDataView.OnDataClickListener() {
+            @Override
+            public void onClick() {
+                DataDialog.showtime(THActivity.this, new DataDialog.DataCallBack() {
+                    @Override
+                    public void getData(String data) {
+                        th8.setText(data);
+                    }
+                });
+            }
+        });
+
+        th9.setOnClickListener(new QueryDataView.OnDataClickListener() {
+            @Override
+            public void onClick() {
+                DataDialog.showtime(THActivity.this, new DataDialog.DataCallBack() {
+                    @Override
+                    public void getData(String data) {
+                        th9.setText(data);
+                    }
+                });
             }
         });
     }
