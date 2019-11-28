@@ -110,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/bs5"
+            app:name="@string/bs5new"
             />
 
 
@@ -119,6 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+            android:visibility="gone"
             app:name="@string/bs6"
             />
 
@@ -145,17 +146,23 @@
             android:id="@+id/bs9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/bs9"
+            app:name="@string/bs9new"
             android:layout_marginTop="@dimen/dp_10"
             />
-
 
         <com.hao.jstquery.view.QueryItemView
             android:id="@+id/bs10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:name="@string/bs10new"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <com.hao.jstquery.view.QueryItemView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:name="@string/bs10"
             android:layout_marginTop="@dimen/dp_10"
+            android:visibility="gone"
             />
 
         <LinearLayout

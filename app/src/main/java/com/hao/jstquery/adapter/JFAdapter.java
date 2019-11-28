@@ -21,10 +21,10 @@ import butterknife.ButterKnife;
 public class JFAdapter extends RecyclerView.Adapter<JFAdapter.ViewHolder> {
 
     public Context context;
-    public List<JFBean> data;
+    public List<JFBean.JFListBean> data;
 
 
-    public JFAdapter(Context context, List<JFBean> data) {
+    public JFAdapter(Context context, List<JFBean.JFListBean> data) {
         this.context = context;
         this.data = data;
     }
@@ -38,16 +38,18 @@ public class JFAdapter extends RecyclerView.Adapter<JFAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.jfr1.setText("jfr1" + position);
-        holder.jfr2.setText("jfr2" + position);
-        holder.jfr3.setText("jfr3" + position);
-        holder.jfr4.setText("jfr4" + position);
-        holder.jfr5.setText("jfr5" + position);
-        holder.jfr6.setText("jfr6" + position);
-        holder.jfr7.setText("jfr1" + position);
-        holder.jfr8.setText("jfr1" + position);
-        holder.jfr9.setText("jfr1" + position);
-        holder.jfr10.setText("jfr1" + position);
+        JFBean.JFListBean bean = data.get(position);
+        holder.jfr1.setText(bean.getUsePageNo());//报损单号
+        holder.jfr2.setText(bean.getPatientName());//唯一码
+        holder.jfr3.setText(bean.getPatientName());//通用名称
+        holder.jfr4.setText(bean.getTradeName());//商品名称
+        holder.jfr5.setText(bean.getSpecification());//规格型号
+        holder.jfr6.setText(bean.getTradeMark());//品牌
+//        holder.jfr7.setText(bean.getArticalNumber());//货号
+        holder.jfr8.setText(bean.getBatchNo());//生成批号
+        holder.jfr9.setText(bean.getSupplierName());//配送商
+        holder.jfr10.setText(bean.getDate());//报损时间
+//        holder.jfr11.setText(bean.getSupplierUser());//报损人
         if (position % 2 == 0) {
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.white));
         } else {
@@ -81,7 +83,14 @@ public class JFAdapter extends RecyclerView.Adapter<JFAdapter.ViewHolder> {
         TextView jfr9;
         @BindView(R.id.jfr10)
         TextView jfr10;
-
+        @BindView(R.id.jfr11)
+        TextView jfr11;
+        @BindView(R.id.jfr12)
+        TextView jfr12;
+        @BindView(R.id.jfr13)
+        TextView jfr13;
+        @BindView(R.id.jfr14)
+        TextView jfr14;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

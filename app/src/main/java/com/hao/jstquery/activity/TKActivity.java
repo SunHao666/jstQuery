@@ -10,8 +10,12 @@ import android.widget.TextView;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.SerializableMap;
 import com.hao.jstquery.view.QueryItemScanView;
 import com.hao.jstquery.view.QueryItemView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,8 +47,6 @@ public class TKActivity extends BaseActivity {
     QueryItemView tk8;
     @BindView(R.id.tk9)
     QueryItemView tk9;
-    @BindView(R.id.tk10)
-    QueryItemView tk10;
     @BindView(R.id.tv_query)
     TextView tvQuery;
     @BindView(R.id.lay_query)
@@ -71,7 +73,14 @@ public class TKActivity extends BaseActivity {
         layQuery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TKActivity.this, TKInfoActivity.class));
+                SerializableMap map=new SerializableMap();
+                map.setMap(getMap());
+                Intent intent = new Intent(TKActivity.this, TKInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("bundle", map);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                
             }
         });
 
@@ -88,10 +97,20 @@ public class TKActivity extends BaseActivity {
         return R.layout.activity_tk;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+
+    private Map<String, Object> getMap() {
+        Map<String,Object> dataMap = new HashMap<>();
+        dataMap.put("pageNo",1);
+        dataMap.put("pageSize",20);
+        dataMap.put("returnStorageNo",tk1.getText().toString());//单号
+        dataMap.put("rfid",tk2.getText().toString());//唯一码
+        dataMap.put("innName",tk3.getText().toString());//通用名称
+        dataMap.put("tradeName",tk4.getText().toString());//商品名称
+        dataMap.put("articalNumber",tk5.getText().toString());//货号
+        dataMap.put("batchNo",tk6.getText().toString());//生成批号
+        dataMap.put("supplierName",tk7.getText().toString());//配送商
+        dataMap.put("startDate",tk8.getText().toString());//开始时间
+        dataMap.put("endDate",tk9.getText().toString());//结束时间
+        return dataMap;
     }
 }

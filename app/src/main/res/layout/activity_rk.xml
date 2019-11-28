@@ -96,21 +96,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/rk5"
+            app:name="@string/bshh"
             />
+
 
 
         <com.hao.jstquery.view.QueryItemView
             android:id="@+id/rk6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/rk6"
-            />
-
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/rk7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
@@ -119,7 +111,7 @@
 
 
         <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/rk8"
+            android:id="@+id/rk7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
@@ -128,17 +120,17 @@
 
 
         <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/rk9"
+            android:id="@+id/rk8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/rk9"
+            app:name="@string/startdata"
             android:layout_marginTop="@dimen/dp_10"
             />
         <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/rk10"
+            android:id="@+id/rk9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/rk10"
+            app:name="@string/enddata"
             android:layout_marginTop="@dimen/dp_10"
             />
 

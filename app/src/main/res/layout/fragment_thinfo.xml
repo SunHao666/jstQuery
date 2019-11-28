@@ -23,7 +23,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/thf2"
+            android:text="@string/thf8"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/thf3"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -31,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/thf3"
+            android:text="@string/thf2"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -47,17 +54,24 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/thf5"
+            android:text="@string/pinpai"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/thf6"
+            android:text="@string/bshh"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/thf5"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
+
 
         <TextView
             android:layout_width="0dp"
@@ -67,13 +81,7 @@
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/thf8"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+
 
         <TextView
             android:layout_width="0dp"

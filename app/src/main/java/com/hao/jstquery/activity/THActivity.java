@@ -10,8 +10,12 @@ import android.widget.TextView;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.SerializableMap;
 import com.hao.jstquery.view.QueryItemScanView;
 import com.hao.jstquery.view.QueryItemView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,8 +46,6 @@ public class THActivity extends BaseActivity {
     QueryItemView th8;
     @BindView(R.id.th9)
     QueryItemView th9;
-    @BindView(R.id.th10)
-    QueryItemView th10;
     @BindView(R.id.tv_query)
     TextView tvQuery;
     @BindView(R.id.lay_query)
@@ -70,7 +72,13 @@ public class THActivity extends BaseActivity {
         layQuery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(THActivity.this,THInfoActivity.class));
+                SerializableMap map=new SerializableMap();
+                map.setMap(getMap());
+                Intent intent = new Intent(THActivity.this,THInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("bundle", map);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
@@ -92,5 +100,20 @@ public class THActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+    private Map<String, Object> getMap() {
+        Map<String,Object> dataMap = new HashMap<>();
+        dataMap.put("pageNo",1);
+        dataMap.put("pageSize",20);
+        dataMap.put("returnSupplierNo",th1.getText().toString());//单号
+        dataMap.put("rfid",th2.getText().toString());//唯一码
+        dataMap.put("innName",th3.getText().toString());//通用名称
+        dataMap.put("tradeName",th4.getText().toString());//商品名称
+        dataMap.put("articalNumber",th5.getText().toString());//货号
+        dataMap.put("batchNo",th6.getText().toString());//生成批号
+        dataMap.put("supplierName",th7.getText().toString());//配送商
+        dataMap.put("startDate",th8.getText().toString());//开始时间
+        dataMap.put("endDate",th9.getText().toString());//结束时间
+        return dataMap;
     }
 }

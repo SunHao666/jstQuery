@@ -103,5 +103,14 @@
             android:gravity="center"
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
+
+        <TextView
+            android:id="@+id/rkr11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
     </LinearLayout>
 </LinearLayout>

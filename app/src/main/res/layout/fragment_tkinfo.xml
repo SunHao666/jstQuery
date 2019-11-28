@@ -1,97 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@color/gray4"
         android:divider="@color/gray3"
-        android:showDividers="middle"
-        >
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:paddingTop="@dimen/dp_5"
             android:paddingBottom="@dimen/dp_5"
-            android:layout_weight="1" android:gravity="center"
             android:text="@string/tkf1"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/tkf2"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-
-            android:text="@string/tkf3"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/tkf11"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/tkf12"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/tkf13"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/tkf14"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="@string/tkf15"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tkf2"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tkf3"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tkf11"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/pinpai"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/bshh"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tkf12"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tkf14"
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="@string/tkf16"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="@string/tkf17"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+            android:textColor="@color/gray5"
+            android:textSize="@dimen/sp_6" />
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"

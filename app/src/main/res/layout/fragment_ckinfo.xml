@@ -19,6 +19,14 @@
             android:text="@string/ckf1"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/ckf15"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -31,8 +39,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-
             android:text="@string/ckf3"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
+
+        <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:gravity="center"
+        android:text="@string/ggxh"
+        android:textSize="@dimen/sp_6"
+        android:textColor="@color/gray5"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/pinpai"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -40,10 +63,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf11"
+            android:text="@string/bshh"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -52,13 +74,7 @@
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf13"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+
 
         <TextView
             android:layout_width="0dp"
@@ -68,13 +84,6 @@
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf15"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
 
         <TextView
             android:layout_width="0dp"

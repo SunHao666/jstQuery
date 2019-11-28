@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.bean.RKBean;
+import com.hao.jstquery.bean.THBean;
 import com.hao.jstquery.bean.TKBean;
 
 import java.util.List;
@@ -21,14 +22,13 @@ import butterknife.ButterKnife;
 public class TKAdapter extends RecyclerView.Adapter<TKAdapter.ViewHolder> {
 
     public Context context;
-    public List<TKBean> data;
+    public  List<TKBean.TKListBean> data;
 
 
-    public TKAdapter(Context context, List<TKBean> data) {
+    public TKAdapter(Context context, List<TKBean.TKListBean> data) {
         this.context = context;
         this.data = data;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,16 +38,18 @@ public class TKAdapter extends RecyclerView.Adapter<TKAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tkr1.setText("tkr1" + position);
-        holder.tkr2.setText("tkr2" + position);
-        holder.tkr3.setText("tkr3" + position);
-        holder.tkr4.setText("tkr4" + position);
-        holder.tkr5.setText("tkr5" + position);
-        holder.tkr6.setText("tkr6" + position);
-        holder.tkr7.setText("tkr1" + position);
-        holder.tkr8.setText("tkr1" + position);
-        holder.tkr9.setText("tkr1" + position);
-        holder.tkr10.setText("tkr1" + position);
+        TKBean.TKListBean bean = data.get(position);
+        holder.tkr1.setText(bean.getReturnStorageNo());//报损单号
+        holder.tkr2.setText(bean.getRfid());//唯一码
+        holder.tkr3.setText(bean.getInnName());//通用名称
+        holder.tkr4.setText(bean.getTradeName());//商品名称
+        holder.tkr5.setText(bean.getSpecification());//规格型号
+        holder.tkr6.setText(bean.getTradeMark());//品牌
+        holder.tkr7.setText(bean.getReturnUserName());//货号
+        holder.tkr8.setText(bean.getBatchNo());//生成批号
+        holder.tkr9.setText(bean.getSupplyerName());//配送商
+        holder.tkr10.setText(bean.getDate());//报损时间
+        holder.tkr11.setText(bean.getReturnUserName());//报损人
         if (position % 2 == 0) {
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.white));
         } else {
@@ -81,7 +83,8 @@ public class TKAdapter extends RecyclerView.Adapter<TKAdapter.ViewHolder> {
         TextView tkr9;
         @BindView(R.id.tkr10)
         TextView tkr10;
-
+        @BindView(R.id.tkr11)
+        TextView tkr11;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

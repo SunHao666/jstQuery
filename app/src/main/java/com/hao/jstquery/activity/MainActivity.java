@@ -60,26 +60,26 @@ public class MainActivity extends BaseActivity {
             case R.id.btn1:
                 startActivity(new Intent(this, ZDActivity.class));
                 break;
-            case R.id.btn2://报损查询
+            case R.id.btn2://报损查询1
                 startActivity(new Intent(this, Query1Activity.class));
                 break;
-            case R.id.btn3://入库查询
+            case R.id.btn3://入库查询1
                 startActivity(new Intent(this,RKActivity.class));
                 break;
-            case R.id.btn4://退货查询
+            case R.id.btn4://退货查询1
                 startActivity(new Intent(this,THActivity.class));
                 break;
-            case R.id.btn5://出库查询
+            case R.id.btn5://出库查询1
                 startActivity(new Intent(this,CKActivity.class));
                 break;
-            case R.id.btn6://退库查询
-                startActivity(new Intent(this,CKActivity.class));
+            case R.id.btn6://退库查询1
+                startActivity(new Intent(this,TKActivity.class));
                 break;
-            case R.id.btn7://库存查询
+            case R.id.btn7://库存查询1
                 startActivity(new Intent(this, KCActivity.class));
                 break;
             case R.id.btn8://计费查询
-                startActivity(new Intent(this, KCActivity.class));
+                startActivity(new Intent(this, JFActivity.class));
                 break;
             case R.id.btn9://追溯查询
                 startActivity(new Intent(this, ZSActivity.class));

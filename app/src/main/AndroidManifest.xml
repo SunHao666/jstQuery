@@ -37,6 +37,7 @@
         <activity android:name=".activity.ZSActivity" />
         <activity android:name=".activity.ZSInfoActivity" />
         <activity android:name=".activity.VideoInfoActivity" />
+        <activity android:name=".activity.CKActivity" />
     </application>
 
 </manifest>

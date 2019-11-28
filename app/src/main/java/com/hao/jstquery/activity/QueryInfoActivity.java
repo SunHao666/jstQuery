@@ -16,12 +16,15 @@ import com.hao.jstquery.R;
 import com.hao.jstquery.adapter.QueryInfoAdapter;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.bean.BSBean;
+import com.hao.jstquery.bean.SerializableMap;
 import com.hao.jstquery.fragment.MFragment;
 import com.hao.jstquery.network.BaseCallback;
 import com.hao.jstquery.network.NetManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,25 +49,30 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
     TextView totalitem;
     private List<Fragment>  data = new ArrayList<>();
     private QueryInfoAdapter adapter;
+    private Map<String, Object> map;
 
     @Override
     protected void initData() {
-        request();
+
+        Bundle extras = getIntent().getExtras();
+        SerializableMap serializable = (SerializableMap) extras.getSerializable("bundle");
+        map = serializable.getMap();
+        request(map);
         adapter = new QueryInfoAdapter(getSupportFragmentManager(), data);
         tvPage.setText("第 " + 1 + " 页");
         viewPager.setAdapter(adapter);
-
         viewPager.addOnPageChangeListener(this);
     }
 
-    private void request() {
-        NetManager.getInstance().api().listBS()
+
+    private void request(Map<String, Object> map) {
+        NetManager.getInstance().api().listBS(map)
                 .enqueue(new BaseCallback<BSBean>() {
                     @Override
                     protected void onSuccess(BSBean bsBean) {
                         totalitem.setText("共"+bsBean.getTotalRow()+"条");
                         for (int i = 0; i < bsBean.getTotalPage(); i++) {
-                            data.add(new MFragment());
+                            data.add(new MFragment(i+1,map));
                         }
                         adapter.notifyDataSetChanged();
                     }

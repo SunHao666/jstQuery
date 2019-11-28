@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/th5"
+            app:name="@string/bshh"
             />
 
 
@@ -105,7 +105,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/th6"
+            app:name="@string/th7"
             />
 
 
@@ -114,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/th7"
+            app:name="@string/th8"
             />
 
 
@@ -123,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/th8"
+            app:name="@string/startdata"
             />
 
 
@@ -131,14 +131,7 @@
             android:id="@+id/th9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/th9"
-            android:layout_marginTop="@dimen/dp_10"
-            />
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/th10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:name="@string/th10"
+            app:name="@string/enddata"
             android:layout_marginTop="@dimen/dp_10"
             />
 

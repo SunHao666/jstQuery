@@ -37,16 +37,17 @@ public class QueryRecAdapter extends RecyclerView.Adapter<QueryRecAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BSBean.ListBean bean = data.get(position);
-        holder.bsr1.setText(bean.getReportedLossNo());
-        holder.bsr2.setText(bean.getInnName());
-        holder.bsr3.setText("bsr3"+position);
-        holder.bsr4.setText("bsr4"+position);
-        holder.bsr5.setText("bsr5"+position);
-        holder.bsr6.setText("bsr6"+position);
-        holder.bsr7.setText("bsr1"+position);
-        holder.bsr8.setText("bsr1"+position);
-        holder.bsr9.setText("bsr1"+position);
-        holder.bsr10.setText("bsr1"+position);
+        holder.bsr1.setText(bean.getReportedLossNo());//报损单号
+        holder.bsr2.setText(bean.getRfid());//唯一码
+        holder.bsr3.setText(bean.getInnName());//通用名称
+        holder.bsr4.setText(bean.getTradeName());//商品名称
+        holder.bsr5.setText(bean.getSpecification());//规格型号
+        holder.bsr6.setText(bean.getTradeMark());//品牌
+        holder.bsr7.setText(bean.getArticalNumber());//货号
+        holder.bsr8.setText(bean.getBatchNo());//生成批号
+        holder.bsr9.setText(bean.getSupplierName());//配送商
+        holder.bsr10.setText(bean.getDate());//报损时间
+        holder.bsr11.setText(bean.getUserName());//报损人
         if(position%2 == 0){
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.white));
         }else{
@@ -81,7 +82,8 @@ public class QueryRecAdapter extends RecyclerView.Adapter<QueryRecAdapter.ViewHo
         TextView bsr9;
         @BindView(R.id.bsr10)
         TextView bsr10;
-
+        @BindView(R.id.bsr11)
+        TextView bsr11;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);

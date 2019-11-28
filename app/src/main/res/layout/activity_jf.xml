@@ -67,41 +67,15 @@
             app:title="@string/jf1"
             />
 
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            app:title="@string/jf2"
-            />
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/jf3"
-            />
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/jf4"
-            />
-
         <com.hao.jstquery.view.QueryItemScanView
-            android:id="@+id/jf5"
+            android:id="@+id/jf2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             app:name="@string/jf5"
             />
-
-
         <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf6"
+            android:id="@+id/jf3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
@@ -110,60 +84,49 @@
 
 
         <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf7"
+            android:id="@+id/jf4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             app:name="@string/jf7"
             />
 
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/jf5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/bshh"
+            />
 
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/jf6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:name="@string/scph"
+            />
+
+        <com.hao.jstquery.view.QueryItemView
+            android:id="@+id/jf7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:name="@string/jf13"
+            android:layout_marginTop="@dimen/dp_10"
+            />
         <com.hao.jstquery.view.QueryItemView
             android:id="@+id/jf8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:name="@string/startdata"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/jf8"
             />
-
 
         <com.hao.jstquery.view.QueryItemView
             android:id="@+id/jf9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:name="@string/jf9"
-            android:layout_marginTop="@dimen/dp_10"
-            />
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:name="@string/jf10"
-            android:layout_marginTop="@dimen/dp_10"
-            />
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:name="@string/jf11"
-            android:layout_marginTop="@dimen/dp_10"
-            />
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:name="@string/jf12"
-            android:layout_marginTop="@dimen/dp_10"
-            />
-
-        <com.hao.jstquery.view.QueryItemView
-            android:id="@+id/jf13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:name="@string/jf13"
+            app:name="@string/enddata"
             android:layout_marginTop="@dimen/dp_10"
             />
         <LinearLayout

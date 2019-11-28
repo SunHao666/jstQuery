@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hao.jstquery.R;
 import com.hao.jstquery.bean.KCBean;
 import com.hao.jstquery.bean.RKBean;
+import com.hao.jstquery.bean.THBean;
 
 import java.util.List;
 
@@ -21,10 +22,10 @@ import butterknife.ButterKnife;
 public class RKAdapter extends RecyclerView.Adapter<RKAdapter.ViewHolder> {
 
     public Context context;
-    public List<RKBean> data;
+    public List<RKBean.RKListBean> data;
    
 
-    public RKAdapter(Context context, List<RKBean> data) {
+    public RKAdapter(Context context, List<RKBean.RKListBean> data) {
         this.context = context;
         this.data = data;
     }
@@ -38,16 +39,18 @@ public class RKAdapter extends RecyclerView.Adapter<RKAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.rkr1.setText("rkr1" + position);
-        holder.rkr2.setText("rkr2" + position);
-        holder.rkr3.setText("rkr3" + position);
-        holder.rkr4.setText("rkr4" + position);
-        holder.rkr5.setText("rkr5" + position);
-        holder.rkr6.setText("rkr6" + position);
-        holder.rkr7.setText("rkr1" + position);
-        holder.rkr8.setText("rkr1" + position);
-        holder.rkr9.setText("rkr1" + position);
-        holder.rkr10.setText("rkr1" + position);
+        RKBean.RKListBean bean = data.get(position);
+        holder.rkr1.setText(bean.getInPageNo());//报损单号
+        holder.rkr2.setText(bean.getRfid());//唯一码
+        holder.rkr3.setText(bean.getInnName());//通用名称
+        holder.rkr4.setText(bean.getTradeName());//商品名称
+        holder.rkr5.setText(bean.getSpecification());//规格型号
+        holder.rkr6.setText(bean.getTradeMark());//品牌
+        holder.rkr7.setText(bean.getArticalNumber());//货号
+        holder.rkr8.setText(bean.getBatchNo());//生成批号
+        holder.rkr9.setText(bean.getSupplierName());//配送商
+        holder.rkr10.setText(bean.getInDate());//报损时间
+        holder.rkr11.setText(bean.getInCheckUserName());//报损人
         if (position % 2 == 0) {
             holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.white));
         } else {
@@ -81,7 +84,8 @@ public class RKAdapter extends RecyclerView.Adapter<RKAdapter.ViewHolder> {
         TextView rkr9;
         @BindView(R.id.rkr10)
         TextView rkr10;
-
+        @BindView(R.id.rkr11)
+        TextView rkr11;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
