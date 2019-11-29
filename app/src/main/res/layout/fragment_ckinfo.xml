@@ -13,23 +13,6 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/dp_5"
-            android:paddingBottom="@dimen/dp_5"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf1"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf15"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
             android:text="@string/ckf2"
             android:textSize="@dimen/sp_6"
@@ -42,14 +25,13 @@
             android:text="@string/ckf3"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
-
         <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" android:gravity="center"
-        android:text="@string/ggxh"
-        android:textSize="@dimen/sp_6"
-        android:textColor="@color/gray5"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/ggxh"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
 
         <TextView
             android:layout_width="0dp"
@@ -66,15 +48,6 @@
             android:text="@string/bshh"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf12"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-
 
         <TextView
             android:layout_width="0dp"
@@ -85,11 +58,14 @@
             android:textColor="@color/gray5"/>
 
 
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf16"
+            android:text="@string/zzdata1"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -97,9 +73,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf17"
+            android:text="@string/zzdata2"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
+
+
+        <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:gravity="center"
+        android:text="@string/zz_fj"
+        android:textSize="@dimen/sp_6"
+        android:textColor="@color/gray5"/>
+
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

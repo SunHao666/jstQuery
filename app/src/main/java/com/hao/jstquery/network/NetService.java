@@ -9,6 +9,7 @@ import com.hao.jstquery.bean.RKBean;
 import com.hao.jstquery.bean.THBean;
 import com.hao.jstquery.bean.TKBean;
 import com.hao.jstquery.bean.ZSBean;
+import com.hao.jstquery.bean.ZZBean;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,12 +50,12 @@ public interface NetService {
     @GET("data/outStorage")
     Call<BaseCallModel<CKBean>> listCK(@QueryMap Map<String,Object> map);
 
-    //资质查询-注册证查询
-    @GET("data/registrationCertificate")
-    Call<BaseCallModel<RKBean>> listZZR(@QueryMap Map<String,Object> map);
+//    //资质查询-注册证查询
+//    @GET("data/registrationCertificate")
+//    Call<BaseCallModel<RKBean>> listZZR(@QueryMap Map<String,Object> map);
 
     //供应商资质查询
-    @GET("data/storageAmount")
-    Call<BaseCallModel<KCBean>> listZZ(@QueryMap Map<String,Object> map);
+    @GET("data/registrationCertificate")
+    Call<BaseCallModel<ZZBean>> listZZ(@QueryMap Map<String,Object> map);
 
 }

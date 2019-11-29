@@ -1,5 +1,6 @@
 package com.hao.jstquery.activity;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.bean.SerializableMap;
@@ -17,13 +21,20 @@ import com.hao.jstquery.utils.DataDialog;
 import com.hao.jstquery.view.QueryDataView;
 import com.hao.jstquery.view.QueryItemScanView;
 import com.hao.jstquery.view.QueryItemView;
+import com.king.zxing.CaptureActivity;
+import com.king.zxing.Intents;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
+
+import static com.hao.jstquery.R2.attr.title;
 
 /**
  * 出库查询
@@ -63,7 +74,9 @@ public class CKActivity extends BaseActivity {
         ck1.setOnScanClickListener(new QueryItemScanView.OnScanClickListener() {
             @Override
             public void onClick() {
-
+                //跳转的默认扫码界面
+                cls = CaptureActivity.class;
+                checkCameraPermissions(1000);
             }
         });
 
@@ -157,6 +170,18 @@ public class CKActivity extends BaseActivity {
         dataMap.put("endDate",ck9.getText().toString());//结束时间
         return dataMap;
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String result = data.getStringExtra(Intents.Scan.RESULT);
+        switch (requestCode) {
+            case 1000:
+                ck1.setText(result);
+                break;
+        }
+    }
+
 
 
 }
