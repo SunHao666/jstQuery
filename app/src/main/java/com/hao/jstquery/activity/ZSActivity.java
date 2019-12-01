@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.SerializableMap;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,12 +34,14 @@ public class ZSActivity extends BaseActivity {
     TextView tvLeft;
     @BindView(R.id.tv_right)
     TextView tvRight;
-    @BindView(R.id.et_wy)
-    EditText etWy;
-    @BindView(R.id.et_pwd)
-    EditText etPwd;
     @BindView(R.id.lay_query)
     LinearLayout layQuery;
+    @BindView(R.id.et_wy)
+    EditText etWy;
+    @BindView(R.id.et_zm)
+    EditText etZm;
+    @BindView(R.id.et_cm)
+    EditText etCm;
 
     @Override
     protected void initData() {
@@ -69,8 +75,25 @@ public class ZSActivity extends BaseActivity {
                 tvRight.setTextColor(getResources().getColor(R.color.white));
                 break;
             case R.id.lay_query:
-                startActivity(new Intent(ZSActivity.this,ZSInfoActivity.class));
+                SerializableMap map = new SerializableMap();
+                map.setMap(getMap());
+                Intent intent = new Intent(ZSActivity.this, ZSInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("bundle", map);
+                intent.putExtras(bundle);
+                startActivity(intent);
                 break;
         }
     }
+
+    private Map<String, Object> getMap() {
+        Map<String, Object> dataMap = new HashMap<>();
+        dataMap.put("pageNo", 1);
+        dataMap.put("pageSize", 20);
+        dataMap.put("rfid", etWy.getText().toString());//唯一码
+        dataMap.put("firstCode", etZm.getText().toString());//通用名称
+        dataMap.put("secondCode", etCm.getText().toString());//商品名称
+        return dataMap;
+    }
+
 }

@@ -8,8 +8,12 @@ import com.hao.jstquery.bean.KCBean;
 import com.hao.jstquery.bean.RKBean;
 import com.hao.jstquery.bean.THBean;
 import com.hao.jstquery.bean.TKBean;
+import com.hao.jstquery.bean.VideoBean;
+import com.hao.jstquery.bean.ZDBean;
 import com.hao.jstquery.bean.ZSBean;
+import com.hao.jstquery.bean.ZSInfo;
 
+import java.lang.ref.Reference;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +42,8 @@ public interface NetService {
     Call<BaseCallModel<JFBean>> listJF(@QueryMap Map<String,Object> map);
 
     //追溯查询
-    @GET("data/usageCharge")
-    Call<BaseCallModel<ZSBean>> listZS(@QueryMap Map<String,Object> map);
+    @GET("data/chain")
+    Call<BaseCallModel<ZSInfo>> listZS(@QueryMap Map<String,Object> map);
 
     //入库查询
     @GET("data/inStorage")
@@ -57,4 +61,10 @@ public interface NetService {
     @GET("data/storageAmount")
     Call<BaseCallModel<KCBean>> listZZ(@QueryMap Map<String,Object> map);
 
+    //制度查询
+    @GET("data/systemFiles")
+    Call<ZDBean> listZD(@QueryMap Map<String,Object> map);
+    //制度查询
+    @GET("data/medicalWorld")
+    Call<VideoBean> listVideo(@QueryMap Map<String,Object> map);
 }

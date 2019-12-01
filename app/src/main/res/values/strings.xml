@@ -163,4 +163,5 @@
     <string name="hzxm">患者姓名</string>
     <string name="sykes">使用科室</string>
     <string name="jfsj">计费时间</string>
+    <string name="zs_cm">次码</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hao.jstquery.R;
+import com.hao.jstquery.bean.VideoBean;
 import com.hao.jstquery.bean.ZDBean;
 
 import java.util.List;
@@ -17,12 +18,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ZDAdapter extends RecyclerView.Adapter<ZDAdapter.ViewHolder> {
+public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
 
     public Context context;
-    public List<ZDBean.DataBean.ZDListBean> data;
+    public List<VideoBean.DataBean.VideoListBean> data;
 
-    public ZDAdapter(Context context, List<ZDBean.DataBean.ZDListBean> data) {
+    public VideoAdapter(Context context, List<VideoBean.DataBean.VideoListBean> data) {
         this.context = context;
         this.data = data;
     }
@@ -30,7 +31,7 @@ public class ZDAdapter extends RecyclerView.Adapter<ZDAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_zdrec, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_videorec, parent, false);
         return new ViewHolder(view);
     }
 
@@ -75,6 +76,6 @@ public class ZDAdapter extends RecyclerView.Adapter<ZDAdapter.ViewHolder> {
 
     //回调接口
     public interface OnItemClickListener {
-        void onItemClick(View v,int position);
+        void onItemClick(View v, int position);
     }
 }

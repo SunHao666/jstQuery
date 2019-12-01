@@ -39,15 +39,15 @@
         android:layout_above="@id/home_bottom"
         android:layout_below="@id/top"
         android:layout_marginLeft="@dimen/dp_30"
-        android:layout_marginTop="@dimen/dp_90"
+        android:layout_marginTop="@dimen/dp_60"
         android:layout_marginRight="@dimen/dp_30"
-        android:layout_marginBottom="@dimen/dp_90"
+        android:layout_marginBottom="@dimen/dp_60"
         android:orientation="vertical"
         android:paddingLeft="@dimen/dp_30"
         android:paddingRight="@dimen/dp_20">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_40"
@@ -114,8 +114,9 @@
 
             <EditText
                 android:id="@+id/et_wy"
-                android:layout_width="@dimen/dp_190"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
                 android:layout_marginTop="@dimen/dp_5"
                 android:background="@drawable/query_item_shpe" />
 
@@ -128,10 +129,28 @@
                 android:textSize="@dimen/sp_12" />
 
             <EditText
-                android:id="@+id/et_pwd"
-                android:layout_width="@dimen/dp_190"
+                android:id="@+id/et_zm"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_5"
+                android:padding="@dimen/dp_5"
+                android:background="@drawable/query_item_shpe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+
+                android:text="@string/zs_cm"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
+
+            <EditText
+                android:id="@+id/et_cm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:padding="@dimen/dp_5"
                 android:background="@drawable/query_item_shpe" />
 
             <LinearLayout

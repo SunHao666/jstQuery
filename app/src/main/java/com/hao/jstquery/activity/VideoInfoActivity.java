@@ -3,8 +3,10 @@ package com.hao.jstquery.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -23,6 +25,7 @@ import com.hao.jstquery.utils.IntentKeys;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 播放视频
@@ -36,6 +39,8 @@ public class VideoInfoActivity extends BaseActivity {
     TextView tvZdtitle;
     @BindView(R.id.videoview)
     VideoView videoview;
+    @BindView(R.id.home_bottom)
+    RelativeLayout homeBottom;
 
     private static final String THUMB = "https://cms-bucket.nosdn.127.net/eb411c2810f04ffa8aaafc42052b233820180418095416.jpeg";
     private VideoView mVideoView;
@@ -168,4 +173,18 @@ public class VideoInfoActivity extends BaseActivity {
             super.onBackPressed();
         }
     }
+    @OnClick({R.id.lay_back, R.id.home_bottom})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.lay_back:
+                finish();
+                break;
+            case R.id.home_bottom:
+                startActivity(new Intent(VideoInfoActivity.this, MainActivity.class));
+                finish();
+                break;
+        }
+
+    }
+
 }

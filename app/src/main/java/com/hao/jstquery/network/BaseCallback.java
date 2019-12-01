@@ -2,11 +2,12 @@ package com.hao.jstquery.network;
 
 import android.widget.Toast;
 
+import com.bumptech.glide.load.HttpException;
+
 import java.net.ConnectException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.HttpException;
 import retrofit2.Response;
 
 public abstract class BaseCallback<T> implements Callback<BaseCallModel<T>> {
@@ -41,7 +42,7 @@ public abstract class BaseCallback<T> implements Callback<BaseCallModel<T>> {
             onFailed(403, t.getMessage());
         } else if (t instanceof HttpException) {
             HttpException ex = (HttpException) t;
-            onFailed(ex.code(), ex.message());
+//            onFailed(ex.code(), ex.message());
         } else {
             onFailed(405, t.getMessage());
         }
