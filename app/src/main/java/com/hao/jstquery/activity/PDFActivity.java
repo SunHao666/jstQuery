@@ -1,16 +1,11 @@
 package com.hao.jstquery.activity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnFileDownloadCompleteListener;
@@ -24,38 +19,34 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ZDInfoActivity extends BaseActivity {
-    @BindView(R.id.lay_back)
-    LinearLayout layBack;
+public class PDFActivity extends BaseActivity {
 
-    @BindView(R.id.home_bottom)
-    RelativeLayout homeBottom;
-    public String resUrl, file_path, content, title;
-    @BindView(R.id.iv_home)
-    ImageView ivHome;
-    @BindView(R.id.tv_zdtitle)
-    TextView tvZdtitle;
-    @BindView(R.id.pb_bar)
-    ProgressBar pbBar;
-    @BindView(R.id.remote_pdf_root)
-    RelativeLayout remotePdfRoot;
-    private String docPath;
     @BindView(R.id.pdfView)
     PDFView pdfView;
+    @BindView(R.id.iv_home)
+    ImageView ivHome;
+    @BindView(R.id.lay_back)
+    LinearLayout layBack;
+    private String docPath;
     final String SDPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/PDFViewCache/";
-
+    public String resUrl, file_path;
     @Override
     protected void initData() {
         resUrl = getIntent().getStringExtra("resUrl");
-        file_path = getIntent().getStringExtra("file_path");
-        content = getIntent().getStringExtra("content");
-        title = getIntent().getStringExtra("title");
-
-//        mContent.setText(content);
-        tvZdtitle.setText(title);
-        Log.e("zdinfo", resUrl + file_path);
-        docPath = resUrl + file_path;
+        docPath = resUrl;
         initPdf();
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.activity_pdf;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 
     private void initPdf() {
@@ -81,11 +72,6 @@ public class ZDInfoActivity extends BaseActivity {
     }
 
 
-    @Override
-    public int getLayout() {
-        return R.layout.activity_zdinfo;
-    }
-
     @OnClick({R.id.lay_back, R.id.home_bottom})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -93,17 +79,11 @@ public class ZDInfoActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.home_bottom:
-                startActivity(new Intent(ZDInfoActivity.this, MainActivity.class));
+                startActivity(new Intent(PDFActivity.this, MainActivity.class));
                 finish();
                 break;
         }
 
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
     }
 
     @Override
@@ -118,5 +98,4 @@ public class ZDInfoActivity extends BaseActivity {
 
         }
     }
-
 }

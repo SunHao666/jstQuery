@@ -66,7 +66,7 @@ public class TKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
 
     @Override
     public int getLayout() {
-        return R.layout.activity_ckinfo;
+        return R.layout.activity_tkinfo;
     }
 
     @Override

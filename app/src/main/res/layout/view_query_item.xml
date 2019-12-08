@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_14"
         android:background="@drawable/query_item_shpe"
+        android:lines="1"
         android:padding="@dimen/dp_2_5"
         android:paddingLeft="@dimen/dp_5"
         android:textSize="@dimen/sp_12"

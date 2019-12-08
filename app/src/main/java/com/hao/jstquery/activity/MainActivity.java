@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, ZSActivity.class));
                 break;
             case R.id.btn10://资质查询、
-
+                startActivity(new Intent(this, ZZActivity.class));
                 break;
             case R.id.btn11:
                 startActivity(new Intent(this,VideoActivity.class));

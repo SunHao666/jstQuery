@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            app:name="@string/jf5"
+            app:title="@string/jf5"
             />
         <com.hao.jstquery.view.QueryItemView
             android:id="@+id/jf3"

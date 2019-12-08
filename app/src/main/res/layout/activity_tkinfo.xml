@@ -48,7 +48,7 @@
                 android:layout_marginBottom="@dimen/dp_10"
                 android:text="@string/tkquery"
                 android:textColor="@color/gray1"
-                android:textSize="8sp" />
+                android:textSize="@dimen/sp_8" />
 
             <Space
                 android:layout_width="0dp"
@@ -78,7 +78,7 @@
                     android:layout_marginBottom="@dimen/dp_10"
                     android:text="@string/back"
                     android:textColor="@color/gray2"
-                    android:textSize="8sp" />
+                    android:textSize="@dimen/sp_8" />
             </LinearLayout>
         </LinearLayout>
         <View

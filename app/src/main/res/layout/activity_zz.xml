@@ -26,7 +26,7 @@
         android:layout_above="@id/home_bottom"
         android:layout_below="@id/top"
         android:layout_marginLeft="@dimen/dp_30"
-        android:layout_marginTop="@dimen/dp_90"
+        android:layout_marginTop="@dimen/dp_60"
         android:layout_marginRight="@dimen/dp_30"
         android:layout_marginBottom="@dimen/dp_60"
         android:alpha="0.3"
@@ -47,7 +47,7 @@
         android:paddingRight="@dimen/dp_20">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_40"
@@ -69,91 +69,54 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
-                    android:text="@string/zsquery"
+                    android:text="@string/zzquery"
                     android:textColor="@color/white"
                     android:textSize="@dimen/sp_16" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp_30"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_left"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/left_pressed_shape"
-                    android:paddingLeft="@dimen/dp_10"
-                    android:paddingRight="@dimen/dp_10"
-                    android:text="@string/zsleft"
-                    android:textSize="@dimen/sp_9"
-                    android:textColor="@color/white"/>
-
-                <TextView
-                    android:id="@+id/tv_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/right_press_shape"
-                    android:paddingLeft="@dimen/dp_10"
-                    android:paddingRight="@dimen/dp_10"
-                    android:text="@string/zsright"
-                    android:textSize="@dimen/sp_9" />
-                />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_16"
-                android:text="@string/zs_wy"
+                android:text="@string/jff5"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_12" />
 
             <EditText
-                android:id="@+id/et_wy"
-                android:layout_width="match_parent"
+                android:id="@+id/et_ty"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dp_5"
                 android:layout_marginTop="@dimen/dp_5"
-                android:lines="1"
                 android:background="@drawable/query_item_shpe" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_12"
-                android:text="@string/zs_zc"
+                android:text="@string/jff6"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_12" />
 
             <EditText
-                android:id="@+id/et_zm"
-                android:layout_width="match_parent"
+                android:id="@+id/et_sp"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="wrap_content"
-                android:lines="1"
                 android:layout_marginTop="@dimen/dp_5"
-                android:padding="@dimen/dp_5"
                 android:background="@drawable/query_item_shpe" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_12"
-
-                android:text="@string/zs_cm"
+                android:text="@string/zz_code"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_12" />
 
             <EditText
-                android:id="@+id/et_cm"
-                android:layout_width="match_parent"
+                android:id="@+id/et_code"
+                android:layout_width="@dimen/dp_190"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_5"
-                android:padding="@dimen/dp_5"
-                android:lines="1"
                 android:background="@drawable/query_item_shpe" />
 
             <LinearLayout

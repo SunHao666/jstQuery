@@ -42,7 +42,7 @@ public class ZSActivity extends BaseActivity {
     EditText etZm;
     @BindView(R.id.et_cm)
     EditText etCm;
-
+    int select = 1;
     @Override
     protected void initData() {
 
@@ -67,12 +67,14 @@ public class ZSActivity extends BaseActivity {
                 tvRight.setBackgroundResource(R.drawable.right_press_shape);
                 tvLeft.setTextColor(getResources().getColor(R.color.white));
                 tvRight.setTextColor(Color.BLACK);
+                select = 1;
                 break;
             case R.id.tv_right:
                 tvLeft.setBackgroundResource(R.drawable.left_press_shape);
                 tvRight.setBackgroundResource(R.drawable.right_pressed_shape);
                 tvLeft.setTextColor(Color.BLACK);
                 tvRight.setTextColor(getResources().getColor(R.color.white));
+                select = 2;
                 break;
             case R.id.lay_query:
                 SerializableMap map = new SerializableMap();
@@ -93,6 +95,7 @@ public class ZSActivity extends BaseActivity {
         dataMap.put("rfid", etWy.getText().toString());//唯一码
         dataMap.put("firstCode", etZm.getText().toString());//通用名称
         dataMap.put("secondCode", etCm.getText().toString());//商品名称
+        dataMap.put("type",select);
         return dataMap;
     }
 

@@ -154,7 +154,7 @@
     <string name="enddata">结束日期</string>
     <string name="pinpai">品牌</string>
     <string name="ggxh">规格型号</string>
-    <string name="scph">生成批号</string>
+    <string name="scph">生产批号</string>
     <string name="pss">配送商</string>
     <string name="rksj">入库时间</string>
     <string name="rkr">入库人</string>
@@ -164,4 +164,11 @@
     <string name="sykes">使用科室</string>
     <string name="jfsj">计费时间</string>
     <string name="zs_cm">次码</string>
+    <string name="zzquery">资质查询</string>
+    <string name="zz_code">医疗器械注册证号</string>
+    <string name="zzdata1">生效日期</string>
+    <string name="zzdata2">失效日期</string>
+    <string name="zz_fj">附件</string>
+    <string name="permission_camera">扫码需要用到拍摄权限</string>
+    <string name="videosky">医学天地</string>
 </resources>

@@ -54,7 +54,9 @@ public class QueryItemScanView extends LinearLayout {
     public String getText(){
         return et_query.getText().toString().trim();
     }
-
+    public void setText(String text){
+        et_query.setText(text);
+    }
     //私有属性
     private OnScanClickListener onScanClickListener = null;
 

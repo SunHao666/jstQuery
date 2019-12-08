@@ -45,6 +45,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-    implementation 'es.voghdev.pdfviewpager:library:1.0.6'
 
+    //AndroidX 版本扫码
+    implementation 'com.king.zxing:zxing-lite:1.1.4-androidx'
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation 'com.github.shxdos:AndroidPdfViewer:2.7.0-beta.2'
 }
