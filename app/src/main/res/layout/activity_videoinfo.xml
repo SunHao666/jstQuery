@@ -17,14 +17,22 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/dp_17" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/home_bottom"
+        android:orientation="vertical"
         android:layout_below="@id/top"
+        android:layout_above="@id/home_bottom"
         android:layout_marginLeft="@dimen/dp_17"
-        android:layout_marginRight="@dimen/dp_17"
+        android:layout_marginRight="@dimen/dp_17">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/query_item_shpe"
         android:orientation="vertical">
 
@@ -46,7 +54,7 @@
                 android:layout_marginLeft="@dimen/dp_6"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginBottom="@dimen/dp_10"
-                android:text="@string/zdquery"
+                android:text="@string/videosky"
                 android:textColor="@color/gray1"
                 android:textSize="@dimen/sp_8" />
 
@@ -88,60 +96,21 @@
             />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingLeft="@dimen/dp_20"
-            android:paddingRight="@dimen/dp_20"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
             >
 
-            <TextView
-                android:id="@+id/tv_zdtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="《北京积水潭医院医用耗材管理办法》"
-                android:layout_margin="@dimen/dp_10"
-                />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_3"
-                android:background="@color/gray3"
-                />
-
             <com.dueeeke.videoplayer.player.VideoView
                 android:id="@+id/videoview"
-                android:layout_marginTop="@dimen/dp_10"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="@dimen/dp_300"
                 />
         </LinearLayout>
-
-        <LinearLayout
+    </LinearLayout>
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray3"
-                android:textSize="@dimen/sp_8"
-                android:layout_margin="@dimen/dp_10"
-                />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray3"
-                android:textSize="@dimen/sp_8"
-                android:layout_marginRight="@dimen/dp_10"
-                />
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>

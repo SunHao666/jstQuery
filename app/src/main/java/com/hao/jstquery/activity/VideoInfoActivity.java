@@ -35,8 +35,6 @@ public class VideoInfoActivity extends BaseActivity {
     ImageView ivHome;
     @BindView(R.id.lay_back)
     LinearLayout layBack;
-    @BindView(R.id.tv_zdtitle)
-    TextView tvZdtitle;
     @BindView(R.id.videoview)
     VideoView videoview;
     @BindView(R.id.home_bottom)

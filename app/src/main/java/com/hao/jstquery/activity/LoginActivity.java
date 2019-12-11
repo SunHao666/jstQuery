@@ -1,13 +1,25 @@
 package com.hao.jstquery.activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.LoginBean;
+import com.hao.jstquery.network.BaseCallback;
+import com.hao.jstquery.network.NetManager;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,9 +37,18 @@ public class LoginActivity extends BaseActivity {
     @BindView(R.id.et_pwd)
     EditText etPwd;
 
+    @BindView(R.id.lay_login1)
+    LinearLayout layLogin1;
+    private String encode;
+
     @Override
     protected void initData() {
-
+        findViewById(R.id.home_bottom).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -41,7 +62,43 @@ public class LoginActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.lay_login)
+    @OnClick(R.id.lay_login1)
     public void onViewClicked() {
+        checkNull();
+//            byte[] bytes = etPwd.getText().toString().trim().getBytes("UTF-8");
+//            encode = Base64.encodeToString(bytes, Base64.DEFAULT);
+
+             encode = new String(Base64.encode(etPwd.getText().toString().getBytes(), Base64.DEFAULT)).trim();    // 结果为"MTIzNDU2"
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("userName",etAccount.getText().toString().trim());
+        map.put("password",encode);
+        NetManager.getInstance().api().login(map).enqueue(new BaseCallback<LoginBean>() {
+            @Override
+            protected void onSuccess(LoginBean s) {
+                SharedPreferences sp = getSharedPreferences("jst",MODE_PRIVATE);
+                SharedPreferences.Editor edit = sp.edit();
+                edit.putBoolean("isLogin",true);
+                edit.putString("userName",s.getUser_name());
+                edit.commit();
+                finish();
+            }
+
+            @Override
+            protected void onFailed(int code, String msg) {
+                Toast.makeText(LoginActivity.this,msg,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void checkNull() {
+        if(TextUtils.isEmpty(etAccount.getText().toString())){
+            Toast.makeText(this,"用户名不能为空",Toast.LENGTH_SHORT).show();
+            return;
+        }else if(TextUtils.isEmpty(etPwd.getText().toString())){
+            Toast.makeText(this,"密码不能为空",Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 }

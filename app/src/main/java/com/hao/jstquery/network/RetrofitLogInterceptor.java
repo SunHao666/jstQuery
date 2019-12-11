@@ -2,6 +2,8 @@ package com.hao.jstquery.network;
 
 import android.util.Log;
 
+import com.hao.jstquery.utils.APPUtils;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 
@@ -17,6 +19,7 @@ public class RetrofitLogInterceptor implements Interceptor {
     @Override
     public synchronized okhttp3.Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
+
         long startTime = System.currentTimeMillis();
         okhttp3.Response response = chain.proceed(chain.request());
         long endTime = System.currentTimeMillis();

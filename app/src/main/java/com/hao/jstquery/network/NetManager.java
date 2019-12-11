@@ -1,5 +1,7 @@
 package com.hao.jstquery.network;
 
+import com.hao.jstquery.utils.UserAgentIntercepter;
+
 import java.sql.Time;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -33,6 +35,7 @@ public class NetManager {
                 .callTimeout(TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT,TimeUnit.SECONDS)
                 .writeTimeout(TIMEOUT,TimeUnit.SECONDS)
+                .addInterceptor(new UserAgentIntercepter())
                 .addInterceptor(new RetrofitLogInterceptor())
                 .build();
         return okHttpClient;

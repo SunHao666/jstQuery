@@ -3,11 +3,44 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/home_bg">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <include
         android:id="@+id/top"
-        layout="@layout/top_logo" />
+        layout="@layout/top_logo"
+        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
 
+            <TextView
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="退出"
+                android:textColor="@color/gray1"
+                android:textSize="@dimen/sp_12"
+                android:background="@color/white"
+                android:layout_marginLeft="@dimen/dp_5"
+                />
+        </LinearLayout>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

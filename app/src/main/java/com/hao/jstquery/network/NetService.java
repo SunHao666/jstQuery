@@ -5,6 +5,7 @@ import com.hao.jstquery.bean.BSBean;
 import com.hao.jstquery.bean.CKBean;
 import com.hao.jstquery.bean.JFBean;
 import com.hao.jstquery.bean.KCBean;
+import com.hao.jstquery.bean.LoginBean;
 import com.hao.jstquery.bean.RKBean;
 import com.hao.jstquery.bean.THBean;
 import com.hao.jstquery.bean.TKBean;
@@ -68,4 +69,16 @@ public interface NetService {
     //制度查询
     @GET("data/medicalWorld")
     Call<VideoBean> listVideo(@QueryMap Map<String,Object> map);
+
+    //资质查询
+    @GET("data/getCertFile")
+    Call<String> certFile(@QueryMap Map<String,Object> map);
+
+    //登录
+    @GET("user/login")
+    Call<BaseCallModel<LoginBean>> login(@QueryMap Map<String,Object> map);
+
+    //登录
+    @GET("user/logout")
+    Call<BaseCallModel<String>> loginout(@QueryMap Map<String,Object> map);
 }

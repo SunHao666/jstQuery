@@ -47,7 +47,7 @@ public class ZZFragment extends BaseFragment {
             @Override
             public void onImageClickListener(int postition) {
                 Intent intent = new Intent(getActivity(), PDFActivity.class);
-                intent.putExtra("file_path",data.get(postition).getUrl());
+                intent.putExtra("resUrl",data.get(postition).getUrl());
                 startActivity(intent);
             }
         });

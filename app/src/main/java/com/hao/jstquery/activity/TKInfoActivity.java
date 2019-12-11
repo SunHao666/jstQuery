@@ -69,12 +69,6 @@ public class TKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
         return R.layout.activity_tkinfo;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

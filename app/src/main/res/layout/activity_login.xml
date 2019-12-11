@@ -84,6 +84,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/query_item_shpe"
                 android:layout_marginTop="@dimen/dp_5"
+                android:padding="@dimen/dp_5"
+                android:lines="1"
                 />
 
             <TextView
@@ -99,8 +101,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/query_item_shpe"
                 android:layout_marginTop="@dimen/dp_5"
+                android:padding="@dimen/dp_5"
+                android:lines="1"
+                android:inputType="textPassword"
                 />
             <LinearLayout
+                android:id="@+id/lay_login1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_23"
