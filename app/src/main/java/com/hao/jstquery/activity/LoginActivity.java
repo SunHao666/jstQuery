@@ -64,7 +64,9 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.lay_login1)
     public void onViewClicked() {
-        checkNull();
+        if(!checkNull()){
+            return;
+        }
 //            byte[] bytes = etPwd.getText().toString().trim().getBytes("UTF-8");
 //            encode = Base64.encodeToString(bytes, Base64.DEFAULT);
 
@@ -92,13 +94,14 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    private void checkNull() {
+    private boolean checkNull() {
         if(TextUtils.isEmpty(etAccount.getText().toString())){
             Toast.makeText(this,"用户名不能为空",Toast.LENGTH_SHORT).show();
-            return;
+            return false;
         }else if(TextUtils.isEmpty(etPwd.getText().toString())){
             Toast.makeText(this,"密码不能为空",Toast.LENGTH_SHORT).show();
-            return;
+            return false;
         }
+        return true;
     }
 }
