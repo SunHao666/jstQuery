@@ -51,4 +51,5 @@ dependencies {
     implementation 'com.king.zxing:zxing-lite:1.1.4-androidx'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.github.shxdos:AndroidPdfViewer:2.7.0-beta.2'
+    api 'com.google.guava:guava:25.1-android'
 }

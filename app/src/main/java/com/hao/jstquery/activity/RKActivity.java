@@ -2,11 +2,15 @@ package com.hao.jstquery.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
@@ -58,7 +62,7 @@ public class RKActivity extends BaseActivity {
         rk1.setOnScanClickListener(new QueryItemScanView.OnScanClickListener() {
             @Override
             public void onClick() {
-
+                showNFC();
             }
         });
 
@@ -114,6 +118,24 @@ public class RKActivity extends BaseActivity {
                 });
             }
         });
+    }
+
+    private void showNFC() {
+        startActivityForResult(new Intent(this,ReadTextActivity.class),1101);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data != null){
+            if(requestCode == 1101){
+                String nfcResult = data.getStringExtra("nfcResult");
+                Log.e("nfc",nfcResult);
+                if(!TextUtils.isEmpty(nfcResult)){
+                    rk1.setText(nfcResult);
+                }
+            }
+        }
     }
 
     @Override

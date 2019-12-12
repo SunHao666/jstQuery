@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.NFC" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -48,6 +49,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/CaptureTheme"/>
         <activity android:name=".activity.PDFActivity" />
+        <activity android:name=".activity.ReadTextActivity" android:launchMode="singleTop"/>
+
     </application>
 
 </manifest>

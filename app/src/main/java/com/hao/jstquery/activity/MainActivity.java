@@ -64,7 +64,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (!APPUtils.isLogin(this)) {
+        if (APPUtils.isLogin(this)) {
             tvName.setVisibility(View.VISIBLE);
             btnLogout.setVisibility(View.VISIBLE);
             tvName.setText(APPUtils.getName(this));
@@ -130,9 +130,9 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked() {
 
         Map<String,Object> map = new HashMap<>();
-        NetManager.getInstance().api().login(map).enqueue(new BaseCallback<LoginBean>() {
+        NetManager.getInstance().api().loginout(map).enqueue(new BaseCallback<String>() {
             @Override
-            protected void onSuccess(LoginBean s) {
+            protected void onSuccess(String s) {
                 SharedPreferences sp = getSharedPreferences("jst",MODE_PRIVATE);
                 SharedPreferences.Editor edit = sp.edit();
                 edit.putBoolean("isLogin",false);
@@ -141,6 +141,7 @@ public class MainActivity extends BaseActivity {
 
                 tvName.setVisibility(View.GONE);
                 btnLogout.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this,"用户已退出",Toast.LENGTH_SHORT).show();
             }
 
             @Override
