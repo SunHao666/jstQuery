@@ -3,6 +3,7 @@ package com.hao.jstquery.network;
 
 import com.hao.jstquery.bean.BSBean;
 import com.hao.jstquery.bean.CKBean;
+import com.hao.jstquery.bean.IndexBean;
 import com.hao.jstquery.bean.JFBean;
 import com.hao.jstquery.bean.KCBean;
 import com.hao.jstquery.bean.LoginBean;
@@ -76,9 +77,13 @@ public interface NetService {
 
     //登录
     @GET("user/login")
-    Call<BaseCallModel<LoginBean>> login(@QueryMap Map<String,Object> map);
+    Call<BaseCallModel<IndexBean>> login(@QueryMap Map<String,Object> map);
 
     //登录
     @GET("user/logout")
     Call<BaseCallModel<String>> loginout(@QueryMap Map<String,Object> map);
+
+
+    @GET("index")
+    Call<BaseCallModel<IndexBean>> index();
 }

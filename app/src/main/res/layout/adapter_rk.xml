@@ -12,7 +12,7 @@
         android:showDividers="middle"
         >
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
             android:textColor="@color/gray5"
             android:textSize="@dimen/sp_6" />
 
-        <TextView
+        <TextView android:padding="@dimen/dp_2_5" 
             android:id="@+id/rkr11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

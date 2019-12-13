@@ -18,6 +18,7 @@ import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.network.Contant;
+import com.hao.jstquery.utils.APPUtils;
 import com.mingle.widget.LoadingView;
 
 import java.io.File;
@@ -47,8 +48,9 @@ public class PDFActivity extends BaseActivity {
     protected void initData() {
 
         resUrl = getIntent().getStringExtra("resUrl");
-        docPath = Contant.BASEURL + "data/getCertFile?file=" + resUrl;
+//        docPath = Contant.BASEURL + "data/getCertFile?file=" + resUrl;
         file_path1 = "getCertFile?file="+resUrl;
+        docPath = Contant.BASEURL +"data/getCertFile?"+"appId=RVMhou1g&appSecret=8hojokSJUUlzbammvI2XT2ckooVmd8X0m2K&mac="+ APPUtils.getNewMac() +"&file="+resUrl;
         Log.e("tag",docPath);
         if (TextUtils.isEmpty(resUrl)) {
             return;

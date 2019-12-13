@@ -66,8 +66,8 @@ public class CKActivity extends BaseActivity {
             @Override
             public void onClick() {
                 //跳转的默认扫码界面
-                cls = CaptureActivity.class;
-                checkCameraPermissions(1000);
+//                cls = CaptureActivity.class;
+//                checkCameraPermissions(1000);
             }
         });
 

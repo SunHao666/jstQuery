@@ -148,7 +148,7 @@
                     android:textSize="@dimen/sp_15"
                     android:text="@string/query"
                     android:textColor="@color/white"
-                    android:padding="@dimen/dp_3"
+                    android:padding="@dimen/dp_5"
                     android:gravity="center"
                     />
             </LinearLayout>

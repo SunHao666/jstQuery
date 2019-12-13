@@ -2,7 +2,12 @@ package com.hao.jstquery.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,10 +19,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.hao.jstquery.R;
 import com.hao.jstquery.adapter.QueryInfoAdapter;
 import com.hao.jstquery.base.BaseActivity;
-import com.hao.jstquery.bean.CKBean;
 import com.hao.jstquery.bean.SerializableMap;
 import com.hao.jstquery.bean.ZZBean;
-import com.hao.jstquery.fragment.CKFragment;
 import com.hao.jstquery.fragment.ZZFragment;
 import com.hao.jstquery.network.BaseCallback;
 import com.hao.jstquery.network.NetManager;
@@ -33,7 +36,7 @@ import butterknife.OnClick;
 /**
  * 资质查询信息
  */
-public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChangeListener{
+public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
     @BindView(R.id.iv_home)
     ImageView ivHome;
     @BindView(R.id.lay_back)
@@ -44,9 +47,19 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
     TextView totalitem;
     @BindView(R.id.tv_page)
     TextView tvPage;
+
+    @BindView(R.id.vp_left)
+    ImageButton vpLeft;
+    @BindView(R.id.vp_right)
+    ImageButton vpRight;
+    @BindView(R.id.et_num)
+    EditText etNum;
+    @BindView(R.id.btn_jump)
+    TextView btnJump;
     private List<Fragment> data = new ArrayList<>();
     private QueryInfoAdapter adapter;
     private Map<String, Object> map;
+
     @Override
     protected void initData() {
         //2.获取map
@@ -56,10 +69,34 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
         //3.发送请求
         request(map);
         //4.通用的
-        adapter= new QueryInfoAdapter(getSupportFragmentManager(), data);
+        adapter = new QueryInfoAdapter(getSupportFragmentManager(), data);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
         tvPage.setText("第 " + 1 + " 页");
+
+        etNum.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(TextUtils.isEmpty(s)){
+                    return;
+                }
+                Integer num = Integer.valueOf(s.toString().trim());
+                if(num>data.size()){
+                    num = data.size();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     @Override
@@ -81,7 +118,18 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
 
     @Override
     public void onPageSelected(int position) {
-        tvPage.setText("第 "+(position+1)+" 页");
+        tvPage.setText("第 " + (position + 1) + " 页");
+        if (position == 0) {
+            vpLeft.setVisibility(View.GONE);
+        } else {
+            vpLeft.setVisibility(View.VISIBLE);
+        }
+
+        if (position == data.size() - 1) {
+            vpRight.setVisibility(View.GONE);
+        } else {
+            vpRight.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -89,7 +137,7 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
 
     }
 
-    @OnClick({R.id.lay_back, R.id.home_bottom})
+    @OnClick({R.id.lay_back, R.id.home_bottom, R.id.vp_left, R.id.vp_right,R.id.btn_jump})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lay_back:
@@ -98,6 +146,16 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
             case R.id.home_bottom:
                 startActivity(new Intent(ZZInfoActivity.this, MainActivity.class));
                 finish();
+                break;
+            case R.id.vp_left:
+                viewPager.arrowScroll(View.FOCUS_LEFT);
+                break;
+            case R.id.vp_right:
+                viewPager.arrowScroll(View.FOCUS_RIGHT);
+                break;
+            case R.id.btn_jump:
+                String nums = etNum.getText().toString();
+                viewPager.setCurrentItem(Integer.valueOf(nums));
                 break;
         }
 
@@ -116,6 +174,11 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
                             data.add(new ZZFragment(i + 1, map));
                         }
                         adapter.notifyDataSetChanged();
+                        if (data.size() > 1) {
+                            vpRight.setVisibility(View.VISIBLE);
+                        } else {
+                            vpRight.setVisibility(View.GONE);
+                        }
                     }
 
                     @Override
@@ -124,4 +187,5 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
                     }
                 });
     }
+
 }

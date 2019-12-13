@@ -31,10 +31,6 @@ import butterknife.OnClick;
  * 播放视频
  */
 public class VideoInfoActivity extends BaseActivity {
-    @BindView(R.id.iv_home)
-    ImageView ivHome;
-    @BindView(R.id.lay_back)
-    LinearLayout layBack;
     @BindView(R.id.videoview)
     VideoView videoview;
     @BindView(R.id.home_bottom)
@@ -171,12 +167,12 @@ public class VideoInfoActivity extends BaseActivity {
             super.onBackPressed();
         }
     }
-    @OnClick({R.id.lay_back, R.id.home_bottom})
+    @OnClick({ R.id.home_bottom})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.lay_back:
-                finish();
-                break;
+//            case R.id.lay_back:
+//                finish();
+//                break;
             case R.id.home_bottom:
                 startActivity(new Intent(VideoInfoActivity.this, MainActivity.class));
                 finish();

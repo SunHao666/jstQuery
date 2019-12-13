@@ -42,9 +42,6 @@
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/scan"
             />
-
-
-
     </RelativeLayout>
    
 </RelativeLayout>

@@ -56,7 +56,7 @@ public class ZZFragment extends BaseFragment {
 
     @Override
     public int getLayout() {
-        return R.layout.fragment_ckinfo;
+        return R.layout.fragment_zzinfo;
     }
 
     private void request() {

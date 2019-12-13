@@ -3,6 +3,7 @@ package com.hao.jstquery.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,6 +47,11 @@ public class JFInfoActivity extends BaseActivity implements ViewPager.OnPageChan
     TextView tvPage;
     @BindView(R.id.totalitem)
     TextView totalitem;
+
+    @BindView(R.id.vp_left)
+    ImageButton vpLeft;
+    @BindView(R.id.vp_right)
+    ImageButton vpRight;
     private List<Fragment> data = new ArrayList<>();
     private QueryInfoAdapter adapter;
     private Map<String, Object> map;
@@ -62,6 +68,8 @@ public class JFInfoActivity extends BaseActivity implements ViewPager.OnPageChan
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
         tvPage.setText("第 " + 1 + " 页");
+
+
     }
 
     @Override
@@ -84,6 +92,18 @@ public class JFInfoActivity extends BaseActivity implements ViewPager.OnPageChan
     @Override
     public void onPageSelected(int position) {
         tvPage.setText("第 " + (position + 1) + " 页");
+
+        if(position == 0){
+            vpLeft.setVisibility(View.GONE);
+        }else{
+            vpLeft.setVisibility(View.VISIBLE);
+        }
+
+        if(position == data.size()-1){
+            vpRight.setVisibility(View.GONE);
+        }else{
+            vpRight.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -91,7 +111,7 @@ public class JFInfoActivity extends BaseActivity implements ViewPager.OnPageChan
 
     }
 
-    @OnClick({R.id.lay_back, R.id.home_bottom})
+    @OnClick({R.id.lay_back, R.id.home_bottom,R.id.vp_left, R.id.vp_right})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lay_back:
@@ -100,6 +120,12 @@ public class JFInfoActivity extends BaseActivity implements ViewPager.OnPageChan
             case R.id.home_bottom:
                 startActivity(new Intent(JFInfoActivity.this, MainActivity.class));
                 finish();
+                break;
+            case R.id.vp_left:
+                viewPager.arrowScroll(View.FOCUS_LEFT);
+                break;
+            case R.id.vp_right:
+                viewPager.arrowScroll(View.FOCUS_RIGHT);
                 break;
         }
 
@@ -117,6 +143,11 @@ public class JFInfoActivity extends BaseActivity implements ViewPager.OnPageChan
                             data.add(new JFFragment(i + 1, map));
                         }
                         adapter.notifyDataSetChanged();
+                        if(data.size()>1){
+                            vpRight.setVisibility(View.VISIBLE);
+                        }else{
+                            vpRight.setVisibility(View.GONE);
+                        }
                     }
 
                     @Override

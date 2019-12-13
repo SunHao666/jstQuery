@@ -14,7 +14,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf2"
+            android:text="@string/ck1"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -22,14 +22,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf3"
+            android:text="@string/ck2"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ggxh"
+            android:text="@string/ck3"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/pinpai"
+            android:text="@string/ck4"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -45,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/bshh"
+            android:text="@string/ck5"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -53,10 +53,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/ckf14"
+            android:text="@string/ck6"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
-
 
 
         <TextView
@@ -65,7 +64,18 @@
             android:paddingTop="@dimen/dp_5"
             android:paddingBottom="@dimen/dp_5"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/zzdata1"
+            android:text="@string/bshh"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/ck7"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -73,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
-            android:text="@string/zzdata2"
+            android:text="@string/ck8"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
@@ -82,11 +92,19 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" android:gravity="center"
-        android:text="@string/zz_fj"
+        android:text="@string/ck9"
         android:textSize="@dimen/sp_6"
         android:textColor="@color/gray5"/>
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/ck10"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"

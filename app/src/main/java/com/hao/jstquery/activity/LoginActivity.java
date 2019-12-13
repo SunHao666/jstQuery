@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.bean.IndexBean;
 import com.hao.jstquery.bean.LoginBean;
 import com.hao.jstquery.network.BaseCallback;
 import com.hao.jstquery.network.NetManager;
@@ -75,14 +76,9 @@ public class LoginActivity extends BaseActivity {
         Map<String,Object> map = new HashMap<>();
         map.put("userName",etAccount.getText().toString().trim());
         map.put("password",encode);
-        NetManager.getInstance().api().login(map).enqueue(new BaseCallback<LoginBean>() {
+        NetManager.getInstance().api().login(map).enqueue(new BaseCallback<IndexBean>() {
             @Override
-            protected void onSuccess(LoginBean s) {
-                SharedPreferences sp = getSharedPreferences("jst",MODE_PRIVATE);
-                SharedPreferences.Editor edit = sp.edit();
-                edit.putBoolean("isLogin",true);
-                edit.putString("userName",s.getUser_name());
-                edit.commit();
+            protected void onSuccess(IndexBean s) {
                 finish();
             }
 

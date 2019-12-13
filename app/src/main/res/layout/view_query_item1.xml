@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_query"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="wrap_content"
+        android:text="破损单号"
+        android:textSize="@dimen/sp_12"
+        android:textColor="#ffffff"
+        android:gravity="right"
+        android:layout_centerVertical="true"
+        />
+    <EditText
+        android:id="@+id/et_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:background="@drawable/query_item_shpe"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tv_query"
+        android:lines="1"
+        android:padding="@dimen/dp_2_5"
+        android:paddingLeft="@dimen/dp_5"
+        android:textSize="@dimen/sp_12"
+        />
+</RelativeLayout>

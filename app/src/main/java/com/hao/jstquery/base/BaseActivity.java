@@ -1,10 +1,12 @@
 package com.hao.jstquery.base;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
@@ -89,4 +91,6 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
         intent.putExtra(KEY_IS_CONTINUOUS,isContinuousScan);
         ActivityCompat.startActivityForResult(this,intent,requestCode,optionsCompat.toBundle());
     }
+
+
 }

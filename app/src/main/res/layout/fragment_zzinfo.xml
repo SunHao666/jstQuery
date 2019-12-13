@@ -1,101 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/gray4"
         android:divider="@color/gray3"
-        android:showDividers="middle">
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr1"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
-
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr4"
+        android:showDividers="middle"
+        >
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/ckf2"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr5"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/ckf3"
+            android:textSize="@dimen/sp_6"
+            android:textColor="@color/gray5"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center"
+            android:text="@string/ggxh"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr6"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/pinpai"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr7"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/bshh"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr8"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/ckf14"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr9"
+
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/zzdata1"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
 
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr10"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" android:gravity="center"
+            android:text="@string/zzdata2"
             android:textSize="@dimen/sp_6"
             android:textColor="@color/gray5"/>
-        <TextView android:padding="@dimen/dp_2_5" 
-            android:id="@+id/bsr11"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" android:gravity="center"
-            android:textSize="@dimen/sp_6"
-            android:textColor="@color/gray5"/>
+
+
+        <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:gravity="center"
+        android:text="@string/zz_fj"
+        android:textSize="@dimen/sp_6"
+        android:textColor="@color/gray5"/>
+
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>

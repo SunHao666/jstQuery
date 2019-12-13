@@ -3,6 +3,7 @@ package com.hao.jstquery.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,15 +13,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.hao.jstquery.R;
-import com.hao.jstquery.adapter.KCInfoAdapter;
 import com.hao.jstquery.adapter.QueryInfoAdapter;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.bean.CKBean;
 import com.hao.jstquery.bean.SerializableMap;
-import com.hao.jstquery.bean.THBean;
 import com.hao.jstquery.fragment.CKFragment;
-import com.hao.jstquery.fragment.RKFragment;
-import com.hao.jstquery.fragment.THFragment;
 import com.hao.jstquery.network.BaseCallback;
 import com.hao.jstquery.network.NetManager;
 
@@ -35,7 +32,7 @@ import butterknife.OnClick;
 /**
  * 出库信息
  */
-public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChangeListener{
+public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
     @BindView(R.id.iv_home)
     ImageView ivHome;
     @BindView(R.id.lay_back)
@@ -46,9 +43,14 @@ public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
     TextView tvPage;
     @BindView(R.id.totalitem)
     TextView totalitem;
+    @BindView(R.id.vp_left)
+    ImageButton vpLeft;
+    @BindView(R.id.vp_right)
+    ImageButton vpRight;
     private List<Fragment> data = new ArrayList<>();
     private QueryInfoAdapter adapter;
     private Map<String, Object> map;
+
     @Override
     protected void initData() {
         //2.获取map
@@ -58,10 +60,17 @@ public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
         //3.发送请求
         request(map);
         //4.通用的
-        adapter= new QueryInfoAdapter(getSupportFragmentManager(), data);
+        adapter = new QueryInfoAdapter(getSupportFragmentManager(), data);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
         tvPage.setText("第 " + 1 + " 页");
+
+
+        if(data.size()>1){
+            vpRight.setVisibility(View.VISIBLE);
+        }else{
+            vpRight.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -83,7 +92,18 @@ public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
 
     @Override
     public void onPageSelected(int position) {
-        tvPage.setText("第 "+(position+1)+" 页");
+        tvPage.setText("第 " + (position + 1) + " 页");
+        if(position == 0){
+            vpLeft.setVisibility(View.GONE);
+        }else{
+            vpLeft.setVisibility(View.VISIBLE);
+        }
+
+        if(position == data.size()-1){
+            vpRight.setVisibility(View.GONE);
+        }else{
+            vpRight.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -91,7 +111,7 @@ public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
 
     }
 
-    @OnClick({R.id.lay_back, R.id.home_bottom})
+    @OnClick({R.id.lay_back, R.id.home_bottom,R.id.vp_left, R.id.vp_right})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lay_back:
@@ -100,6 +120,12 @@ public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
             case R.id.home_bottom:
                 startActivity(new Intent(CKInfoActivity.this, MainActivity.class));
                 finish();
+                break;
+            case R.id.vp_left:
+                viewPager.arrowScroll(View.FOCUS_LEFT);
+                break;
+            case R.id.vp_right:
+                viewPager.arrowScroll(View.FOCUS_RIGHT);
                 break;
         }
 
@@ -126,4 +152,5 @@ public class CKInfoActivity extends BaseActivity implements ViewPager.OnPageChan
                     }
                 });
     }
+
 }
