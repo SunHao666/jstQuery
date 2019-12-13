@@ -86,6 +86,7 @@
                 android:layout_marginTop="@dimen/dp_5"
                 android:padding="@dimen/dp_5"
                 android:lines="1"
+                android:textSize="@dimen/sp_12"
                 />
 
             <TextView
@@ -104,6 +105,7 @@
                 android:padding="@dimen/dp_5"
                 android:lines="1"
                 android:inputType="textPassword"
+                android:textSize="@dimen/sp_12"
                 />
             <LinearLayout
                 android:id="@+id/lay_login1"

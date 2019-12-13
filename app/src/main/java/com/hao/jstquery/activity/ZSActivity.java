@@ -59,7 +59,7 @@ public class ZSActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.tv_left, R.id.tv_right, R.id.lay_query})
+    @OnClick({R.id.tv_left, R.id.tv_right, R.id.lay_query,R.id.home_bottom})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_left:
@@ -84,6 +84,9 @@ public class ZSActivity extends BaseActivity {
                 bundle.putSerializable("bundle", map);
                 intent.putExtras(bundle);
                 startActivity(intent);
+                break;
+            case R.id.home_bottom:
+                finish();
                 break;
         }
     }
