@@ -1,17 +1,14 @@
 package com.hao.jstquery.activity;
 
-import android.Manifest;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.hao.jstquery.R;
@@ -24,17 +21,11 @@ import com.hao.jstquery.view.QueryItemView;
 import com.king.zxing.CaptureActivity;
 import com.king.zxing.Intents;
 
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.EasyPermissions;
-
-import static com.hao.jstquery.R2.attr.title;
 
 /**
  * 出库查询
@@ -80,6 +71,13 @@ public class CKActivity extends BaseActivity {
             }
         });
 
+        ck1.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                    if (i == KeyEvent.KEYCODE_ENTER) {}
+                    return false;
+            }
+        });
         ck2.setOnScanClickListener(new QueryItemScanView.OnScanClickListener() {
             @Override
             public void onClick() {

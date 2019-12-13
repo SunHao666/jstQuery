@@ -38,7 +38,7 @@ public class QueryItemScanView extends LinearLayout {
     private void initAttrs(AttributeSet attrs) {
         TypedArray attributes = mContext.obtainStyledAttributes(attrs, R.styleable.QueryItemScanView);
         name = attributes.getString(R.styleable.QueryItemScanView_title);
-        View view = LayoutInflater.from(mContext).inflate(R.layout.view_query_scan_item, this,true);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.view_query_scan_item1, this,true);
         et_query = view.findViewById(R.id.et_query);
         tv_query = view.findViewById(R.id.tv_query);
         tv_query.setText(name);
