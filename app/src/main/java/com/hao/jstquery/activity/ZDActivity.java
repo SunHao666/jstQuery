@@ -2,7 +2,11 @@ package com.hao.jstquery.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -61,6 +65,10 @@ public class ZDActivity extends BaseActivity implements ViewPager.OnPageChangeLi
     ImageButton vpLeft;
     @BindView(R.id.vp_right)
     ImageButton vpRight;
+    @BindView(R.id.et_num)
+    EditText etNum;
+    @BindView(R.id.btn_jump)
+    TextView btnJump;
     @Override
     protected void initData() {
         map = new HashMap<>();
@@ -74,6 +82,24 @@ public class ZDActivity extends BaseActivity implements ViewPager.OnPageChangeLi
         viewPager.addOnPageChangeListener(this);
         tvPage.setText("第 " + 1 + " 页");
 
+        etNum.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(TextUtils.isEmpty(s)){
+                    return;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     private void request(Map<String,Object> map) {
@@ -122,7 +148,7 @@ public class ZDActivity extends BaseActivity implements ViewPager.OnPageChangeLi
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.lay_back,R.id.home_bottom,R.id.vp_left, R.id.vp_right})
+    @OnClick({R.id.lay_back,R.id.home_bottom,R.id.vp_left, R.id.vp_right,R.id.btn_jump})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lay_back:
@@ -137,6 +163,10 @@ public class ZDActivity extends BaseActivity implements ViewPager.OnPageChangeLi
                 break;
             case R.id.vp_right:
                 viewPager.arrowScroll(View.FOCUS_RIGHT);
+                break;
+            case R.id.btn_jump:
+                String nums = etNum.getText().toString();
+                viewPager.setCurrentItem(Integer.valueOf(nums)-1);
                 break;
         }
 

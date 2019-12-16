@@ -85,10 +85,6 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
                 if(TextUtils.isEmpty(s)){
                     return;
                 }
-                Integer num = Integer.valueOf(s.toString().trim());
-                if(num>data.size()){
-                    num = data.size();
-                }
             }
 
             @Override
@@ -155,7 +151,7 @@ public class ZZInfoActivity extends BaseActivity implements ViewPager.OnPageChan
                 break;
             case R.id.btn_jump:
                 String nums = etNum.getText().toString();
-                viewPager.setCurrentItem(Integer.valueOf(nums));
+                viewPager.setCurrentItem(Integer.valueOf(nums)-1);
                 break;
         }
 

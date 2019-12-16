@@ -2,7 +2,11 @@ package com.hao.jstquery.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -54,6 +58,10 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
     @BindView(R.id.vp_right)
     ImageButton vpRight;
 
+    @BindView(R.id.et_num)
+    EditText etNum;
+    @BindView(R.id.btn_jump)
+    TextView btnJump;
     private List<Fragment>  data = new ArrayList<>();
     private QueryInfoAdapter adapter;
     private Map<String, Object> map;
@@ -70,7 +78,24 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
 
+        etNum.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(TextUtils.isEmpty(s)){
+                    return;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
 
@@ -112,7 +137,7 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
     }
 
 
-    @OnClick({R.id.lay_back, R.id.home_bottom,R.id.vp_left, R.id.vp_right})
+    @OnClick({R.id.lay_back, R.id.home_bottom,R.id.vp_left, R.id.vp_right,R.id.btn_jump})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lay_back:
@@ -127,6 +152,10 @@ public class QueryInfoActivity extends BaseActivity implements ViewPager.OnPageC
                 break;
             case R.id.vp_right:
                 viewPager.arrowScroll(View.FOCUS_RIGHT);
+                break;
+            case R.id.btn_jump:
+                String nums = etNum.getText().toString();
+                viewPager.setCurrentItem(Integer.valueOf(nums)-1);
                 break;
         }
 

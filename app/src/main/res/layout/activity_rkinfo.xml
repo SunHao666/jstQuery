@@ -127,6 +127,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             >
             <TextView
                 android:id="@+id/totalitem"
@@ -147,6 +149,24 @@
                 android:textColor="@color/gray3"
                 android:textSize="@dimen/sp_8"
                 android:layout_marginRight="@dimen/dp_10"
+                />
+            <EditText
+                android:id="@+id/et_num"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_20"
+                android:textSize="@dimen/sp_8"
+                android:background="@color/gray"
+                android:lines="1"
+                android:maxLength="5"
+                android:padding="@dimen/dp_5"
+                android:inputType="number"/>
+            <TextView
+                android:id="@+id/btn_jump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跳转"
+                android:textSize="@dimen/sp_8"
+                android:padding="@dimen/dp_10"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -2,7 +2,9 @@ package com.hao.jstquery.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -40,6 +42,15 @@ public class QueryItemView extends LinearLayout {
         et_query = view.findViewById(R.id.et_query);
         tv_query = view.findViewById(R.id.tv_query);
         tv_query.setText(name);
+        et_query.setOnKeyListener(new OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if(keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction()==KeyEvent.ACTION_DOWN){
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     public String getText(){

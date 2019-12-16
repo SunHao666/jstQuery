@@ -17,6 +17,7 @@ import com.github.barteksc.pdfviewer.listener.OnFileDownloadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
+import com.hao.jstquery.view.MProgressBarView;
 
 import java.io.File;
 
@@ -59,13 +60,14 @@ public class ZDInfoActivity extends BaseActivity {
     }
 
     private void initPdf() {
+        showLoading();
         pdfView.fromUrl(docPath)
                 .enableSwipe(true) // allows to block changing pages using swipe
                 .defaultPage(0)
                 .onLoad(new OnLoadCompleteListener() {
                     @Override
                     public void loadComplete(int nbPages) {
-
+                        dissLoading();
                     }
                 }) // called after document is loaded and starts to be rendered
 //                .onPageChange(this)

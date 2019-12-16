@@ -3,7 +3,6 @@ package com.hao.jstquery.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +18,6 @@ import com.hao.jstquery.R;
 import com.hao.jstquery.base.BaseActivity;
 import com.hao.jstquery.network.Contant;
 import com.hao.jstquery.utils.APPUtils;
-import com.mingle.widget.LoadingView;
 
 import java.io.File;
 
@@ -46,7 +44,7 @@ public class PDFActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        showLoading();
         resUrl = getIntent().getStringExtra("resUrl");
 //        docPath = Contant.BASEURL + "data/getCertFile?file=" + resUrl;
         file_path1 = "getCertFile?file="+resUrl;
@@ -65,6 +63,7 @@ public class PDFActivity extends BaseActivity {
             imageview.setVisibility(View.VISIBLE);
             pdfView.setVisibility(View.GONE);
             Glide.with(this).load(docPath).into(imageview);
+            dissLoading();
         }
 
 
@@ -73,7 +72,6 @@ public class PDFActivity extends BaseActivity {
     }
 
     private void initUrl() {
-
 
 //        Map<String, Object> map = new HashMap<>();
 //        try {
@@ -119,6 +117,7 @@ public class PDFActivity extends BaseActivity {
                     @Override
                     public void loadComplete(int nbPages) {
 //                        probar.setVisibility(View.GONE);
+                        dissLoading();
                     }
                 }) // called after document is loaded and starts to be rendered
 //                .onPageChange(this)

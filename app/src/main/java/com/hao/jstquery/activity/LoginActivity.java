@@ -72,18 +72,20 @@ public class LoginActivity extends BaseActivity {
 //            encode = Base64.encodeToString(bytes, Base64.DEFAULT);
 
              encode = new String(Base64.encode(etPwd.getText().toString().getBytes(), Base64.DEFAULT)).trim();    // 结果为"MTIzNDU2"
-
+        showLoading();
         Map<String,Object> map = new HashMap<>();
         map.put("userName",etAccount.getText().toString().trim());
         map.put("password",encode);
         NetManager.getInstance().api().login(map).enqueue(new BaseCallback<IndexBean>() {
             @Override
             protected void onSuccess(IndexBean s) {
+                dissLoading();
                 finish();
             }
 
             @Override
             protected void onFailed(int code, String msg) {
+                dissLoading();
                 Toast.makeText(LoginActivity.this,msg,Toast.LENGTH_SHORT).show();
             }
         });

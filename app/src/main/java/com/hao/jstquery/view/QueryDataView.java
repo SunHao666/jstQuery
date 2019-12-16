@@ -3,6 +3,7 @@ package com.hao.jstquery.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -47,6 +48,7 @@ public class QueryDataView extends LinearLayout {
                 onClickListener.onClick();
             }
         });
+
     }
 
     public String getText(){

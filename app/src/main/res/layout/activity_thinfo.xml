@@ -124,31 +124,51 @@
             android:background="@color/gray2"
             />
         <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+        <TextView
+            android:id="@+id/totalitem"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            >
-            <TextView
-                android:id="@+id/totalitem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray3"
-                android:textSize="@dimen/sp_8"
-                android:layout_margin="@dimen/dp_10"
-                />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-            <TextView
-                android:id="@+id/tv_page"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray3"
-                android:textSize="@dimen/sp_8"
-                android:layout_marginRight="@dimen/dp_10"
-                />
-        </LinearLayout>
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/sp_8"
+            android:layout_margin="@dimen/dp_10"
+            />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/sp_8"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+        <EditText
+            android:id="@+id/et_num"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_20"
+            android:textSize="@dimen/sp_8"
+            android:background="@color/gray"
+            android:lines="1"
+            android:maxLength="5"
+            android:padding="@dimen/dp_5"
+            android:inputType="number"/>
+        <TextView
+            android:id="@+id/btn_jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转"
+            android:textSize="@dimen/sp_8"
+            android:padding="@dimen/dp_10"
+            />
+    </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

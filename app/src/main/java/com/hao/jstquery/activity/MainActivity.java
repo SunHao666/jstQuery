@@ -91,6 +91,7 @@ public class MainActivity extends BaseActivity {
                 }else{
                     loginIn();
                     name = user.getUser_name();
+                    tvName.setText(name);
                 }
                 List<String> auths = indexBean.getAuths();
                 auth.clear();
@@ -110,7 +111,7 @@ public class MainActivity extends BaseActivity {
     private void loginIn() {
         tvName.setVisibility(View.VISIBLE);
         btnLogout.setVisibility(View.VISIBLE);
-        tvName.setText(name);
+
     }
 
     private void loginOut() {
@@ -170,7 +171,6 @@ public class MainActivity extends BaseActivity {
                 }else {
                     showDialog();
                 }
-
                 break;
             case R.id.btn7://库存查询1
                 if(auth.contains("/data/storageAmount")){

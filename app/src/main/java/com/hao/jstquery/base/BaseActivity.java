@@ -1,6 +1,7 @@
 package com.hao.jstquery.base;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 
 import com.hao.jstquery.R;
+import com.hao.jstquery.view.MProgressBarView;
 
 import java.util.List;
 
@@ -31,6 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
     public Class<?> cls;
     private String title;
     private boolean isContinuousScan;
+    private Dialog dialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,5 +95,16 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
         ActivityCompat.startActivityForResult(this,intent,requestCode,optionsCompat.toBundle());
     }
 
+    public void showLoading(){
+        dialog = new Dialog(this, R.style.loading_dialog);
+        dialog.setContentView(R.layout.mpro);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
+    public void dissLoading(){
+        if(dialog != null && dialog.isShowing()){
+            dialog.dismiss();
+        }
+    }
 
 }
