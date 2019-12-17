@@ -1,6 +1,7 @@
 package com.hao.jstquery.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,15 @@ public class ZZAdapter extends RecyclerView.Adapter<ZZAdapter.ViewHolder> {
         holder.ckr6.setText(bean.getSupplierName());//品牌
         holder.ckr7.setText(bean.getEffDate());//货号
         holder.ckr8.setText(bean.getExpDate());//生成批号
+        String url =data.get(position).getUrl();
+        if(!TextUtils.isEmpty(url)){
+            if(url.endsWith("pdf")){
+                holder.ckr9.setBackgroundResource(R.drawable.pdf);
+            }else{
+                holder.ckr9.setBackgroundResource(R.drawable.image);
+            }
+        }
+
         holder.ckr9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

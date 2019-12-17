@@ -93,7 +93,7 @@
             android:layout_width="@dimen/dp_20"
             android:layout_height="@dimen/dp_20"
             android:layout_margin="@dimen/dp_3"
-            android:background="@mipmap/ic_launcher"
+            android:background="@drawable/pdf"
              />
         </LinearLayout>
     </LinearLayout>
